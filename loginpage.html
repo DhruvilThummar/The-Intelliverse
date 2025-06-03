@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Intelliverse</title>
+    <link rel="stylesheet" href="Login.css" />
+    <script>
+      function toggleForm(formType) {
+        document.getElementById("login-form").style.display =
+          formType === "login" ? "block" : "none";
+        document.getElementById("register-form").style.display =
+          formType === "register" ? "block" : "none";
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- Login Form -->
+    <form id="login-form" class="container" action="/login" method="POST">
+      <img
+        class="logo"
+        src="the intelliverse logo.jpg"
+        alt="The Intelliverse Logo"
+      />
+
+      <h1 class="login-title">The Intelliverse</h1>
+
+      <section class="input-box">
+        <input type="text" name="username" placeholder="Username" required />
+        <i class="bx bxs-user"></i>
+      </section>
+
+      <section class="input-box">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <i class="bx bxs-lock-alt"></i>
+      </section>
+
+      <section class="remember-forgot-box">
+        <div class="remember-me">
+          <input type="checkbox" name="remember-me" id="remember-me" />
+          <label for="remember-me"><h5>Remember me</h5></label>
+        </div>
+        <a class="forgot-password" href="#"><h5>Forgot password?</h5></a>
+      </section>
+
+      <button class="login-button" type="submit">Login</button>
+
+      <div class="social-login">
+        <button class="google-login" type="button">Login with Google</button>
+        <button class="facebook-login" type="button">
+          Login with Facebook
+        </button>
+      </div>
+
+      <h5 class="dont-have-an-account">
+        Don't have an account?
+        <a href="javascript:void(0);" onclick="toggleForm('register')"
+          ><b>Register</b></a
+        >
+      </h5>
+    </form>
+
+    <!-- Register Form -->
+    <form
+      id="register-form"
+      class="container"
+      action="/register"
+      method="POST"
+      style="display: none"
+    >
+      
+      <h1 class="login-title">Register</h1>
+
+      <section class="input-box">
+        <input type="text" name="username" placeholder="Username" required />
+        <i class="bx bxs-user"></i>
+      </section>
+
+      <section class="input-box">
+        <input type="email" name="email" placeholder="Email" required />
+        <i class="bx bxs-envelope"></i>
+      </section>
+
+      <section class="input-box">
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+        <i class="bx bxs-lock-alt"></i>
+      </section>
+
+      <button class="login-button" type="submit">Register</button>
+
+      <div class="social-login">
+        <button class="google-login" type="button">
+          <i class="bx bxl-google"></i> Login with Google
+        </button>
+        <button class="facebook-login" type="button">
+          <i class="bx bxl-facebook"></i> Login with Facebook
+        </button>
+      </div>
+
+      <h5 class="dont-have-an-account">
+        Already have an account?
+        <a href="javascript:void(0);" onclick="toggleForm('login')"
+          ><b>Login</b></a
+        >
+      </h5>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Intelliverse</title>
+    <link rel="stylesheet" href="int.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <img
+          src="the intelliverse logo.jpg"
+          alt="The Intelliverse Logo"
+          class="logo"
+        />
+        <h1 class="title">The Intelliverse</h1>
+        <p class="title2">A Smart Gateway to the Future</p>
+      </div>
+    </header>
+
+    <nav>
+      <a href="index.html" class="button1">Home</a>
+      <a href="about.html" class="button2">About Us</a>
+      <a href="#services" class="button3">Services</a>
+      <a href="loginpage.html" class="button4">Login</a>
+      <a href="contact.html" class="button5">Contact</a>
+    </nav>
+
+    <section id="home">
+      <div class="container">
+        <h2>Welcome to Our Coding Universe</h2>
+        <p>
+          The Intelliverse is a startup dedicated to coding research and
+          innovative implementations.
+        </p>
+      </div>
+    </section>
+
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+      <div id="chatbot-header" onclick="toggleChat()">
+        <img src="robot-icon.png" alt="Chatbot" class="chatbot-avatar" />
+      </div>
+      <div id="chatbot-window">
+        <div id="chat-log">
+          <div style="margin-bottom: 10px; color: #0077ff; font-weight: 600">
+            🤖
+            <span style="color: #fff; font-weight: 500"
+              >Hi! I am your Intelliverse AI Assistant.</span
+            >
+          </div>
+          <div style="margin-bottom: 10px; color: #bbb; font-size: 14px">
+            I can answer questions, help with coding, and chat about technology,
+            science, and more.<br />Click the mic to use voice, or type your
+            message below!
+          </div>
+        </div>
+        <div class="input-row">
+          <input
+            type="text"
+            id="chat-input"
+            name="chat-input"
+            placeholder="Ask me anything..."
+            autocomplete="off"
+            tabindex="1"
+            aria-label="Chat input"
+            onkeydown="if(event.key === 'Enter') sendMessage()"
+            style="background:#fff; color:#222; border:1px solid #ccc; border-radius:6px; padding:8px 12px; font-size:1rem; width:100%; outline:none; box-sizing:border-box;"
+          />
+          <button id="voice-btn" title="Speak" type="button">🎤</button>
+          <button type="button" onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 The Intelliverse. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="chatbot.js"></script>
+  </body>
+</html>
