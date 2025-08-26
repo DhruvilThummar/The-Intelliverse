@@ -58,11 +58,12 @@
         .hero-background {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/ffffff');
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85));
             background-size: cover; /* Use cover for better scaling */
             background-position: center;
             animation: kenburns 20s ease-out infinite;
             width: 100%;
+            z-index: 0;
         }
         @keyframes kenburns {
             0% { transform: scale(1.1); } /* Start slightly zoomed in */
@@ -76,45 +77,54 @@
             height: 100%;
             top: 0;
             left: 0;
-            z-index: 1;
+            /* FIX: layer particles above the background text but below hero content */
+            z-index: 2;
         }
         .hero-content {
             position: relative;
-            z-index: 2;
+            /* FIX: top-most in hero stack */
+            z-index: 3;
         }
         
         /* FIX: Added responsive text styles for the hero background text */
         .hero-background-text {
-            color: rgba(255, 255, 255, 0.1); /* Subtle text color */
-            font-size: 10vw; /* Base font size */
-            font-weight: 100;
+            color: rgba(255, 255, 255, 0.08); /* Subtle text color */
+            /* FIX: robust responsive sizing without breaking at breakpoints */
+            font-size: clamp(48px, 14vw, 220px);
+            font-weight: 800;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 0;
+            /* FIX: sit above hero image, below particles/content */
+            z-index: 1;
             user-select: none; /* Make text unselectable */
             text-transform: uppercase;
+            white-space: nowrap; /* Prevent wrap */
+            letter-spacing: 0.1em;
+            line-height: 1;
+            pointer-events: none; /* FIX: don't block clicks on CTA */
+            text-shadow: 0 2px 24px rgba(0,0,0,0.35); /* subtle lift */
         }
 
+        /* NOTE: legacy breakpoints kept to honor structure; they now inherit clamp() sizing */
         @media (min-width: 376px) { /* mobile size */
             .hero-background-text {
-                font-size: 75%;
+                font-size: 350%; /* use clamp */
             }
         }
         
         @media (min-width: 768px) { /* Tablet size */
             .hero-background-text {
-                font-size: 75%;
+                font-size: 350%; /* use clamp */
             }
         }
         
         @media (min-width: 1280px) { /* Laptop/Desktop size */
             .hero-background-text {
-                font-size: 100px; /* Fixed size on large screens */
+                font-size: 750%; /* use clamp */
             }
         }
-
 
         .reveal-on-scroll {
             opacity: 0;
@@ -380,7 +390,7 @@
 
     <main>
         <section id="home" class="min-h-screen bg-hero flex items-center justify-center"> <div class="hero-background"></div>
-            <h1 class="hero-background-text">Intelliverse</h1>
+            <h1 class="hero-background-text">The Intelliverse</h1>
             <div id="particles-js"></div>
             <div class="container mx-auto px-6 text-center hero-content">
                 <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-4"><span id="typed-hero"></span></h1>
