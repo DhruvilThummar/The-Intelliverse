@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta property="og:the intelliverse logo.jpg" content="Link preview image URL">
-<meta property="og:The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age." content="Link preview description" />
- 
-<meta property="og:The Intelliverse" content="Link preview site name">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Intelliverse - Your Innovation Partner</title>
@@ -63,9 +59,10 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x1080/111827/ffffff?text=The+Intelliverse');
-            background-size: cover;
+            background-size: auto 75%;
             background-position: center;
             animation: kenburns 20s ease-out infinite;
+            width: 100%;
         }
         @keyframes kenburns {
             0% { transform: scale(1); }
@@ -96,26 +93,20 @@
             transform: translateY(0);
         }
         
+        /* --- IMPROVED SERVICE CARD --- */
         .service-card {
-            transform-style: preserve-3d;
-            transition: transform 0.5s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .service-card:hover {
-            transform: rotateY(180deg);
+        /* For mouse users */
+        @media (hover: hover) {
+            .service-card:hover {
+                transform: translateY(-10px) scale(1.03);
+                box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+            }
         }
-        .service-card-front, .service-card-back {
-            backface-visibility: hidden;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .service-card-back {
-            transform: rotateY(180deg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        /* For touch users */
+        .service-card:active {
+            transform: translateY(-5px) scale(0.98);
         }
         
         .team-card {
@@ -132,6 +123,11 @@
         .animated-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        /* Added active state for better touch feedback */
+        .animated-button:active {
+            transform: translateY(0) scale(0.98);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
         }
         
         .nav-link {
@@ -159,20 +155,54 @@
             transform: translateY(-5px) scale(1.1);
         }
 
-        /* Testimonial Carousel */
-        .testimonial-carousel { display: flex; animation: scroll 40s linear infinite; }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-350px * 7))}
+        /* --- IMPROVED Testimonial Carousel --- */
+        .testimonial-carousel-container {
+            overflow-x: auto; /* Allows horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Enforces snapping */
+            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+            scrollbar-width: none; /* Hides scrollbar on Firefox */
         }
-        .testimonial-card { width: 350px; flex-shrink: 0; }
+        .testimonial-carousel-container::-webkit-scrollbar {
+            display: none; /* Hides scrollbar on Chrome/Safari */
+        }
+        .testimonial-carousel {
+            display: flex;
+        }
+        .testimonial-card {
+            width: 90%; /* Make card width relative to the container */
+            max-width: 350px;
+            flex-shrink: 0;
+            scroll-snap-align: center; /* Snap cards to the center */
+        }
         
-        /* Chatbot styles */
+        /* --- IMPROVED Chatbot styles --- */
         #chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
         #chatbot-bubble { width: 60px; height: 60px; background-color: var(--accent-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.3s, background-color 0.5s; }
         #chatbot-bubble:hover { transform: scale(1.1); }
-        #chatbot-window { position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; background-color: var(--bg-secondary); border-radius: 1rem; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; overflow: hidden; transform: scale(0.95); opacity: 0; transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.5s; transform-origin: bottom right; }
-        #chatbot-window.open { transform: scale(1); opacity: 1; }
+        #chatbot-window {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            width: calc(100vw - 40px); /* Full screen width minus side margins */
+            max-width: 350px; /* But not wider than 350px */
+            height: 70vh; /* 70% of the viewport height */
+            max-height: 500px; /* But not taller than 500px */
+            background-color: var(--bg-secondary);
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: none; /* Changed from display:flex to none for toggle logic */
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.5s;
+            transform-origin: bottom right;
+        }
+        #chatbot-window.open {
+            display: flex; /* Display when open */
+            transform: scale(1);
+            opacity: 1;
+        }
         #chat-header { padding: 1rem; background-color: var(--bg-card); color: var(--text-primary); font-weight: bold; text-align: center; cursor: move; }
         #chat-messages { flex-grow: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; }
         .chat-message { padding: 0.75rem 1rem; border-radius: 1rem; max-width: 80%; line-height: 1.4; }
@@ -190,7 +220,7 @@
         .quick-reply { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 1rem; cursor: pointer; transition: background-color 0.3s; }
         .quick-reply:hover { background-color: var(--accent-primary); color: var(--bg-primary); }
 
-        /* Custom blue button and hover with glow */
+        /* --- IMPROVED Custom blue button --- */
         .themed-accent {
             background-color: #3b82f6 !important; /* Blue */
             color: #fff !important;
@@ -204,8 +234,28 @@
             color: #fff !important;
             border: none;
         }
+        
+        /* --- FIX: Improved Mobile Menu Styles --- */
+        #mobile-menu {
+            background-color: var(--bg-secondary); /* Use a solid background for readability */
+            opacity: 0;
+            transform: translateY(-1rem);
+            pointer-events: none;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        #mobile-menu.open {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
 
-        /* Add to your <style> section for extra glow effect */
+        /* --- FIX: Universal Focus Style for Accessibility --- */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 2px solid var(--accent-primary);
+            outline-offset: 2px;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+        }
+
         .logo-glow {
             border-radius: 50%;
             box-shadow: 0 0 24px 0 #3b82f6cc, 0 0 8px 2px #2563eb99;
@@ -216,7 +266,6 @@
             box-shadow: 0 0 40px 8px #2563ebcc, 0 0 16px 4px #3b82f6cc;
         }
 
-        /* */
         .animated-vision-bg {
             background: linear-gradient(270deg, #1f2937, #2563eb, #111827, #3b82f6);
             background-size: 400% 400%;
@@ -249,6 +298,19 @@
             color: #111827 !important;
             background-color: #fff !important;
         }
+
+        /* Accessibility helper class */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
     </style>
 </head>
 <body class="animated-gradient-bg">
@@ -269,12 +331,13 @@
                 <a href="#team" class="nav-link">Team</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden themed-text-primary focus:outline-none">
-                <i class="fas fa-bars text-2xl"></i>
+            <button id="mobile-menu-button" class="md:hidden themed-text-primary focus:outline-none p-2" aria-controls="mobile-menu" aria-expanded="false">
+                <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+                <span class="sr-only">Open navigation menu</span>
             </button>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden themed-bg-secondary bg-opacity-90">
-             <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
+        <div id="mobile-menu" class="md:hidden">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
             <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
             <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
             <a href="#team" class="block py-2 px-4 text-sm hover:bg-gray-700">Team</a>
@@ -352,7 +415,7 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
                     <div class="team-card themed-bg-card p-6 rounded-lg shadow-lg text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Founder" alt=" ">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Founder" alt="Photo of the Founder">
                         <h3 id="team1-name" class="text-xl font-bold mb-1"> </h3>
                         <p id="team1-role" class="themed-text-secondary mb-3">Founder</p>
                         <div class="flex justify-center space-x-4">
@@ -360,7 +423,7 @@
                         </div>
                     </div>
                     <div class="team-card themed-bg-card p-6 rounded-lg shadow-lg text-center">
-                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Co-Founder" alt=" ">
+                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Co-Founder" alt="Photo of the Co-Founder">
                         <h3 id="team2-name" class="text-xl font-bold mb-1"> </h3>
                         <p id="team2-role" class="themed-text-secondary mb-3">Co-Founder</p>
                          <div class="flex justify-center space-x-4">
@@ -371,7 +434,7 @@
             </div>
         </section>
 
-        <!-- <section id="stats" class="py-20 themed-bg-secondary reveal-on-scroll">
+         <!-- <section id="stats" class="py-20 themed-bg-secondary reveal-on-scroll">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
@@ -389,14 +452,14 @@
                 </div>
             </div>
         </section> -->
-
-        <section id="testimonials" class="py-20 overflow-hidden reveal-on-scroll">
+        
+        <section id="testimonials" class="py-20 reveal-on-scroll">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold mb-2">What Our Clients Say</h2>
                     <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
                 </div>
-                <div class="relative w-full overflow-hidden themed-bg-secondary p-8 rounded-lg">
+                <div class="relative w-full themed-bg-secondary p-8 rounded-lg testimonial-carousel-container">
                     <div class="testimonial-carousel">
                         <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client A</div>
                         <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client B</div>
@@ -499,7 +562,7 @@
     </footer>
 
     <div id="chatbot-container">
-        <div id="chatbot-window" class="hidden">
+        <div id="chatbot-window">
             <div id="chat-header" class="flex justify-between items-center">
                 <span>Intelliverse Assistant</span>
                 <button id="clear-chat-btn" class="text-xs themed-text-secondary hover:themed-text-primary">Clear</button>
@@ -553,10 +616,12 @@
                 loop: true
             });
 
+            // --- FIX: IMPROVED MOBILE MENU LOGIC ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                const isOpened = mobileMenu.classList.toggle('open');
+                mobileMenuButton.setAttribute('aria-expanded', isOpened);
             });
 
             const header = document.getElementById('header');
@@ -574,8 +639,10 @@
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        mobileMenu.classList.add('hidden');
+                    // --- FIX: Close menu using the new class ---
+                    if (mobileMenu.classList.contains('open')) {
+                        mobileMenu.classList.remove('open');
+                        mobileMenuButton.setAttribute('aria-expanded', 'false');
                     }
                 });
             });
@@ -590,33 +657,6 @@
 
             document.querySelectorAll('.reveal-on-scroll').forEach(el => {
                 observer.observe(el);
-            });
-
-            const counterObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const target = +counter.getAttribute('data-target');
-                        let current = 0;
-                        const increment = target / 100;
-
-                        const updateCounter = () => {
-                            if (current < target) {
-                                current += increment;
-                                counter.innerText = Math.ceil(current);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCounter();
-                        observer.unobserve(counter);
-                    }
-                });
-            }, { threshold: 0.8 });
-
-            document.querySelectorAll('.counter').forEach(counter => {
-                counterObserver.observe(counter);
             });
 
             const contactForm = document.getElementById('contact-form');
@@ -665,7 +705,7 @@
                 });
             });
 
-            // --- CHATBOT LOGIC (IMPROVED) ---
+            // --- CHATBOT LOGIC ---
             const chatbotBubble = document.getElementById('chatbot-bubble');
             const chatbotWindow = document.getElementById('chatbot-window');
             const chatHeader = document.getElementById('chat-header');
@@ -812,7 +852,7 @@
 
             initializeChat();
             
-            // --- ADMIN PANEL LOGIC ---
+            // ADMIN PANEL LOGIC
             const adminPanel = document.getElementById('admin-panel');
             const saveContentBtn = document.getElementById('save-content-btn');
             const adminLink = document.getElementById('admin-link');
