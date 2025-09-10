@@ -4,6 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Intelliverse - Your Innovation Partner</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The Intelliverse is your innovation partner, offering expert software development, web development, and comprehensive IT services to empower your business in the digital age.">
+    <meta name="keywords" content="The Intelliverse, software development, web development, IT services, custom software, mobile applications, tech solutions, innovation partner">
+    <meta name="author" content="The Intelliverse">
+    <!-- IMPORTANT: Replace '#' with your actual domain for production -->
+    <link rel="canonical" href="https://dhruvilthummar.github.io/The-Intelliverse/">
+
+    <!-- Open Graph Meta Tags (for social media sharing like Facebook, LinkedIn) -->
+    <meta property="og:title" content="The Intelliverse - Your Innovation Partner">
+    <meta property="og:description" content="Expert software development, web development, and IT services to empower your business.">
+    <!-- IMPORTANT: Replace with a full URL to an image for social sharing (e.g., https://yourdomain.com/og-image.jpg) -->
+    <meta property="og:image" content="the intelliverse logo.jpg">
+    <meta property="og:url" content="https://dhruvilthummar.github.io/The-Intelliverse/"> <!-- IMPORTANT: Replace '#' with your actual domain -->
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Intelliverse - Your Innovation Partner">
+    <meta name="twitter:description" content="Expert software development, web development, and IT services to empower your business.">
+    <!-- IMPORTANT: Replace with a full URL to an image for Twitter sharing (e.g., https://yourdomain.com/twitter-image.jpg) -->
+    <meta name="twitter:image" content="the intelliverse logo.jpg">
+
+    <!--
+    SEO Note: For optimal search engine performance, remember to:
+    1. Create a 'robots.txt' file in your website's root directory to guide search engine crawlers.
+    2. Generate and submit a 'sitemap.xml' file to Google Search Console to help index your pages.
+    -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,7 +50,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary);
+            background-color: var(--bg-primary); /* Fallback background */
             color: var(--text-primary);
             transition: background-color 0.5s, color 0.5s;
         }
@@ -51,22 +80,27 @@
             100% { transform: rotate(360deg); }
         }
 
-        .bg-hero {
-            position: relative;
-            overflow: hidden;
+        /* --- Persistent Background --- */
+        #persistent-bg {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 0;
         }
         .hero-background {
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85));
-            background-size: cover; /* Use cover for better scaling */
+            background: linear-gradient(rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.95));
+            background-size: cover;
             background-position: center;
             animation: kenburns 20s ease-out infinite;
             width: 100%;
-            z-index: 0;
+            z-index: 1;
         }
         @keyframes kenburns {
-            0% { transform: scale(1.1); } /* Start slightly zoomed in */
+            0% { transform: scale(1.1); }
             50% { transform: scale(1.3); }
             100% { transform: scale(1.1); }
         }
@@ -77,83 +111,71 @@
             height: 100%;
             top: 0;
             left: 0;
-            /* FIX: layer particles above the background text but below hero content */
             z-index: 2;
         }
+        /* --- Stacking context for content --- */
+        header, main, footer, #chatbot-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* --- Glassmorphism header on scroll --- */
+        header.scrolled {
+            background-color: rgba(31, 41, 55, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
         .hero-content {
             position: relative;
-            /* FIX: top-most in hero stack */
             z-index: 3;
         }
         
-        /* FIX: Added responsive text styles for the hero background text */
         .hero-background-text {
-            color: rgba(255, 255, 255, 0.08); /* Subtle text color */
-            /* FIX: robust responsive sizing without breaking at breakpoints */
+            color: rgba(255, 255, 255, 0.08);
             font-size: clamp(48px, 14vw, 220px);
             font-weight: 800;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            /* FIX: sit above hero image, below particles/content */
             z-index: 1;
-            user-select: none; /* Make text unselectable */
+            user-select: none;
             text-transform: uppercase;
-            white-space: nowrap; /* Prevent wrap */
+            white-space: nowrap;
             letter-spacing: 0.1em;
             line-height: 1;
-            pointer-events: none; /* FIX: don't block clicks on CTA */
-            text-shadow: 0 2px 24px rgba(0,0,0,0.35); /* subtle lift */
-        }
-
-        /* NOTE: legacy breakpoints kept to honor structure; they now inherit clamp() sizing */
-        @media (min-width: 376px) { /* mobile size */
-            .hero-background-text {
-                font-size: 225%; /* use clamp */
-            }
-        }
-        
-        @media (min-width: 768px) { /* Tablet size */
-            .hero-background-text {
-                font-size: 350%; /* use clamp */
-            }
-        }
-        
-        @media (min-width: 1280px) { /* Laptop/Desktop size */
-            .hero-background-text {
-                font-size: 750%; /* use clamp */
-            }
+            pointer-events: none;
+            text-shadow: 0 2px 24px rgba(0,0,0,0.35);
         }
 
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .reveal-on-scroll.visible {
             opacity: 1;
             transform: translateY(0);
         }
         
-        /* --- IMPROVED SERVICE CARD --- */
         .service-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        /* For mouse users */
         @media (hover: hover) {
             .service-card:hover {
                 transform: translateY(-10px) scale(1.03);
                 box-shadow: 0 15px 25px rgba(0,0,0,0.2);
             }
         }
-        /* For touch users */
         .service-card:active {
             transform: translateY(-5px) scale(0.98);
         }
         
         .team-card {
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         .team-card:hover {
             transform: translateY(-10px) perspective(1000px) rotateX(5deg) rotateY(-5deg);
@@ -167,7 +189,6 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        /* Added active state for better touch feedback */
         .animated-button:active {
             transform: translateY(0) scale(0.98);
             box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -175,6 +196,7 @@
         
         .nav-link {
             position: relative;
+            transition: color 0.3s;
         }
         .nav-link::after {
             content: '';
@@ -185,9 +207,9 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--accent-primary);
-            transition: width 0.3s ease-in-out;
+            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
-        .nav-link:hover::after {
+        .nav-link:hover::after, .nav-link.active::after {
             width: 100%;
         }
         
@@ -198,27 +220,25 @@
             transform: translateY(-5px) scale(1.1);
         }
 
-        /* --- IMPROVED Testimonial Carousel --- */
         .testimonial-carousel-container {
-            overflow-x: auto; /* Allows horizontal scrolling */
-            scroll-snap-type: x mandatory; /* Enforces snapping */
-            -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-            scrollbar-width: none; /* Hides scrollbar on Firefox */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
         .testimonial-carousel-container::-webkit-scrollbar {
-            display: none; /* Hides scrollbar on Chrome/Safari */
+            display: none;
         }
         .testimonial-carousel {
             display: flex;
         }
         .testimonial-card {
-            width: 90%; /* Make card width relative to the container */
+            width: 90%;
             max-width: 350px;
             flex-shrink: 0;
-            scroll-snap-align: center; /* Snap cards to the center */
+            scroll-snap-align: center;
         }
         
-        /* --- IMPROVED Chatbot styles --- */
         #chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
         #chatbot-bubble { width: 60px; height: 60px; background-color: var(--accent-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.3s, background-color 0.5s; }
         #chatbot-bubble:hover { transform: scale(1.1); }
@@ -226,14 +246,14 @@
             position: fixed;
             bottom: 80px;
             right: 20px;
-            width: calc(100vw - 40px); /* Full screen width minus side margins */
-            max-width: 350px; /* But not wider than 350px */
-            height: 70vh; /* 70% of the viewport height */
-            max-height: 500px; /* But not taller than 500px */
+            width: calc(100vw - 40px);
+            max-width: 350px;
+            height: 70vh;
+            max-height: 500px;
             background-color: var(--bg-secondary);
             border-radius: 1rem;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            display: none; /* Changed from display:flex to none for toggle logic */
+            display: none;
             flex-direction: column;
             overflow: hidden;
             transform: scale(0.95);
@@ -242,7 +262,7 @@
             transform-origin: bottom right;
         }
         #chatbot-window.open {
-            display: flex; /* Display when open */
+            display: flex;
             transform: scale(1);
             opacity: 1;
         }
@@ -263,24 +283,22 @@
         .quick-reply { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 1rem; cursor: pointer; transition: background-color 0.3s; }
         .quick-reply:hover { background-color: var(--accent-primary); color: var(--bg-primary); }
 
-        /* --- IMPROVED Custom blue button --- */
         .themed-accent {
-            background-color: #3b82f6 !important; /* Blue */
+            background-color: #3b82f6 !important;
             color: #fff !important;
             box-shadow: none;
             border: none;
         }
         .themed-accent-hover:hover,
         .animated-button:hover {
-            background-color: #2563eb !important; /* Dark blue */
+            background-color: #2563eb !important;
             box-shadow: 0 0 16px 0 #2563eb99, 0 0 8px 2px #3b82f6cc;
             color: #fff !important;
             border: none;
         }
         
-        /* --- FIX: Improved Mobile Menu Styles --- */
         #mobile-menu {
-            background-color: var(--bg-secondary); /* Use a solid background for readability */
+            background-color: var(--bg-secondary);
             opacity: 0;
             transform: translateY(-1rem);
             pointer-events: none;
@@ -292,7 +310,17 @@
             pointer-events: auto;
         }
 
-        /* --- FIX: Universal Focus Style for Accessibility --- */
+        /* --- Smoother Mobile Menu Item Animation --- */
+        #mobile-menu.open a {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
+        #mobile-menu.open a:nth-child(2) { transition-delay: 0.15s; }
+        #mobile-menu.open a:nth-child(3) { transition-delay: 0.2s; }
+        #mobile-menu.open a:nth-child(4) { transition-delay: 0.25s; }
+        #mobile-menu.open a:nth-child(5) { transition-delay: 0.3s; }
+
         a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
             outline: 2px solid var(--accent-primary);
             outline-offset: 2px;
@@ -312,7 +340,7 @@
         .animated-vision-bg {
             background: linear-gradient(270deg, #1f2937, #2563eb, #111827, #3b82f6);
             background-size: 400% 400%;
-            animation: gradient-flow 12s ease infinite; /* Made animation faster */
+            animation: gradient-flow 12s ease infinite;
         }
 
         @keyframes gradient-flow {
@@ -336,13 +364,12 @@
             }
         }
         
-        #contact-form input,
+        /* #contact-form input,
         #contact-form textarea {
             color: #111827 !important;
             background-color: #fff !important;
-        }
+        } */
 
-        /* Accessibility helper class */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -356,55 +383,74 @@
         }
     </style>
 </head>
-<body class="animated-gradient-bg">
+<body>
+
+    <div id="persistent-bg">
+        <div class="hero-background"></div>
+        <div id="particles-js"></div>
+    </div>
 
     <div id="preloader">
         <div class="loader"></div>
     </div>
 
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold">
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#home" class="flex items-center gap-3 text-xl sm:text-2xl font-bold z-10">
                 <img src="the intelliverse logo.jpg" alt="The Intelliverse Logo" class="h-12 logo-glow">
-                <a class="container-brand h-18 text-2xl  ">The Intelliverse</a>
+                <span class="whitespace-nowrap hidden sm:inline">The Intelliverse</span>
             </a>
-            <div class="hidden md:flex space-x-6 items-center">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#team" class="nav-link">Team</a>
-                <a href="#contact" class="nav-link">Contact</a>
+    
+            <!-- Centered Nav Links for Desktop -->
+            <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-white">Services</a>
+                <a href="#team" class="nav-link text-gray-300 hover:text-white">Team</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden themed-text-primary focus:outline-none p-2" aria-controls="mobile-menu" aria-expanded="false">
-                <i class="fas fa-bars text-2xl" aria-hidden="true"></i>
+    
+            <!-- Social Icons for Desktop -->
+            <div class="hidden md:flex items-center space-x-6 z-10">
+                 <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://www.instagram.com/the_intelliverse/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+            </div>
+    
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 relative h-8 w-8 z-10" aria-controls="mobile-menu" aria-expanded="false">
+                <i id="menu-open-icon" class="fas fa-bars text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 transform"></i>
+                <i id="menu-close-icon" class="fas fa-times text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 transform rotate-90"></i>
                 <span class="sr-only">Open navigation menu</span>
             </button>
         </nav>
-        <div id="mobile-menu" class="md:hidden flex justify-center fa-phonen text-end flex-col space-y-2 border-t border-gray-70">
-            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-700">Home</a>
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700">About</a>
-            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-700">Services</a>
-            <a href="#team" class="block py-2 px-4 text-sm hover:bg-gray-700">Team</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700">Contact</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-gray-900/95 backdrop-blur-sm absolute top-full left-0 w-full opacity-0 -translate-y-4 pointer-events-none transition-all duration-300">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="#home" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Home</a>
+                <a href="#about" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">About</a>
+                <a href="#services" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Services</a>
+                <a href="#team" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Team</a>
+                <a href="#contact" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Contact</a>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="home" class="min-h-screen bg-hero flex items-center justify-center"> <div class="hero-background"></div>
+        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
             <h1 class="hero-background-text">The Intelliverse</h1>
-            <div id="particles-js"></div>
             <div class="container mx-auto px-6 text-center hero-content">
                 <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-4"><span id="typed-hero"></span></h1>
-                <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 mb-8 fade-in-up" style="transition-delay: 0.2s;">Your one-stop solution for software development, web development, and IT services.</p>
-                <a href="#contact" class="themed-accent themed-accent-hover text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 fade-in-up animated-button" style="transition-delay: 0.4s;">Get in Touch</a>
+                <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 mb-8">Your one-stop solution for software development, web development, and IT services.</p>
+                <a href="#contact" class="themed-accent themed-accent-hover text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 animated-button">Get in Touch</a>
             </div>
         </section>
 
         <section id="about" class="py-20 reveal-on-scroll">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 id="about-title" class="text-3xl md:text-4xl font-bold mb-2">About The Intelliverse</h2>
-                    <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">About The Intelliverse</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="md:w-1/2 h-80 md:h-auto rounded-lg shadow-2xl overflow-hidden">
@@ -417,35 +463,35 @@
                         </div>
                     </div>
                     <div class="md:w-1/2">
-                        <h3 id="about-who-we-are" class="text-2xl font-semibold mb-4">Innovation, Create & Grow</h3>
-                        <p id="about-p1" class="themed-text-secondary mb-4">The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age.</p>
-                        <p id="about-p2" class="themed-text-secondary">Our mission is to transform your ideas into powerful digital realities, ensuring growth and success through technology and creativity.</p>
+                        <h3 class="text-2xl font-semibold mb-4">Innovation, Create & Grow</h3>
+                        <p id="about-p1" class="text-gray-300 mb-4">The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age.</p>
+                        <p class="text-gray-300">Our mission is to transform your ideas into powerful digital realities, ensuring growth and success through technology and creativity.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="py-20 themed-bg-secondary reveal-on-scroll">
+        <section id="services" class="py-20 reveal-on-scroll">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 id="services-title" class="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
-                    <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="service-card themed-bg-card p-8 rounded-lg shadow-lg text-center">
-                        <div class="themed-icon-accent mb-4 service-icon"><i class="fas fa-laptop-code text-4xl"></i></div>
-                        <h3 id="service1-title" class="text-xl font-bold mb-2">Web Development</h3>
-                        <p id="service1-desc" class="themed-text-secondary">Crafting beautiful, responsive, and high-performing websites tailored to your business needs.</p>
+                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-laptop-code text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                        <p class="text-gray-400">Crafting beautiful, responsive, and high-performing websites tailored to your business needs.</p>
                     </div>
-                    <div class="service-card themed-bg-card p-8 rounded-lg shadow-lg text-center">
-                        <div class="themed-icon-accent mb-4 service-icon"><i class="fas fa-cogs text-4xl"></i></div>
-                        <h3 id="service2-title" class="text-xl font-bold mb-2">Software Development</h3>
-                        <p id="service2-desc" class="themed-text-secondary">Building custom software solutions to streamline your operations and drive efficiency.</p>
+                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-cogs text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">Software Development</h3>
+                        <p class="text-gray-400">Building custom software solutions to streamline your operations and drive efficiency.</p>
                     </div>
-                    <div class="service-card themed-bg-card p-8 rounded-lg shadow-lg text-center">
-                        <div class="themed-icon-accent mb-4 service-icon"><i class="fas fa-shield-alt text-4xl"></i></div>
-                        <h3 id="service3-title" class="text-xl font-bold mb-2">IT Services</h3>
-                        <p id="service3-desc" class="themed-text-secondary">Providing reliable IT support and services to keep your business running smoothly.</p>
+                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+                        <div class="text-blue-500 mb-4"><i class="fas fa-shield-alt text-4xl"></i></div>
+                        <h3 class="text-xl font-bold mb-2">IT Services</h3>
+                        <p class="text-gray-400">Providing reliable IT support and services to keep your business running smoothly.</p>
                     </div>
                 </div>
             </div>
@@ -454,64 +500,64 @@
         <section id="team" class="py-20 reveal-on-scroll">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 id="team-title" class="text-3xl md:text-4xl font-bold mb-2">Meet the Founders</h2>
-                    <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Meet the Founders</h2>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-center">
-                    <div class="team-card themed-bg-card p-6 rounded-lg shadow-lg text-center">
+                <div class="flex flex-wrap gap-8 justify-center">
+                    <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                         <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Founder" alt="Photo of the Founder">
-                        <h3 id="team1-name" class="text-xl font-bold mb-1"> </h3>
-                        <p id="team1-role" class="themed-text-secondary mb-3">Founder</p>
+                        <h3 class="text-xl font-bold mb-1">Founder</h3>
+                        <p class="text-gray-400 mb-3">Founder</p>
                         <div class="flex justify-center space-x-4">
-                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
-                    <div class="team-card themed-bg-card p-6 rounded-lg shadow-lg text-center">
+                    <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                         <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Co-Founder" alt="Photo of the Co-Founder">
-                        <h3 id="team2-name" class="text-xl font-bold mb-1"> </h3>
-                        <p id="team2-role" class="themed-text-secondary mb-3">Co-Founder</p>
+                        <h3 class="text-xl font-bold mb-1">Co-Founder</h3>
+                        <p class="text-gray-400 mb-3">Co-Founder</p>
                          <div class="flex justify-center space-x-4">
-                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- <section id="stats" class="py-20 themed-bg-secondary reveal-on-scroll">
+        <section id="stats" class="py-20 bg-gray-800/50 reveal-on-scroll">
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
                     <div>
-                        <h3 class="text-4xl font-bold themed-icon-accent"><span class="counter" data-target="**">0</span>+</h3>
-                        <p class="themed-text-secondary mt-2">Projects Completed</p>
+                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="50">0</span>+</h3>
+                        <p class="text-gray-400 mt-2">Projects Completed</p>
                     </div>
                     <div>
-                        <h3 class="text-4xl font-bold themed-icon-accent"><span class="counter" data-target="***">0</span>%</h3>
-                        <p class="themed-text-secondary mt-2">Client Satisfaction</p>
+                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="100">0</span>%</h3>
+                        <p class="text-gray-400 mt-2">Client Satisfaction</p>
                     </div>
                     <div>
-                        <h3 class="text-4xl font-bold themed-icon-accent"><span class="counter" data-target="**">0</span>+</h3>
-                        <p class="themed-text-secondary mt-2">Happy Clients</p>
+                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="30">0</span>+</h3>
+                        <p class="text-gray-400 mt-2">Happy Clients</p>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
-         <section id="testimonials" class="py-20 reveal-on-scroll">
+        <section id="testimonials" class="py-20 reveal-on-scroll">
             <div class="container mx-auto px-6">
                  <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold mb-2">What Our Clients Say</h2>
-                    <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
-                <div class="relative w-full themed-bg-secondary p-8 rounded-lg testimonial-carousel-container">
+                <div class="relative w-full bg-gray-900 bg-opacity-75 p-8 rounded-lg testimonial-carousel-container">
                     <div class="testimonial-carousel">
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client A</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client B</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client C</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"They transformed our vision into a reality. Exceptional work!" - Client D</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client A</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client B</div>
-                        <div class="testimonial-card themed-bg-card p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client C</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client A</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client B</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client C</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"They transformed our vision into a reality. Exceptional work!" - Client D</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client E</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client F</div>
+                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client G</div>
                     </div>
                 </div>
             </div>
@@ -521,17 +567,16 @@
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold mb-2">Contact Us</h2>
-                    <div class="w-24 h-1 themed-underline-accent mx-auto"></div>
+                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
                 </div>
                 <div class="flex flex-col md:flex-row gap-12">
                     <div class="md:w-1/2">
                         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
                             <input type="hidden" name="access_key" value="2128b8f3-02b4-48ab-8632-a74674f99b6d">
-
                             <div class="space-y-6">
-                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 themed-bg-card rounded-lg border themed-border focus:outline-none focus:ring-2 themed-ring-focus" required>
-                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 themed-bg-card rounded-lg border themed-border focus:outline-none focus:ring-2 themed-ring-focus" required>
-                                <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 themed-bg-card rounded-lg border themed-border focus:outline-none focus:ring-2 themed-ring-focus" required></textarea>
+                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
                                 <button type="submit" class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Send Message</button>
                             </div>
                         </form>
@@ -540,33 +585,23 @@
                     <div class="md:w-1/2">
                         <div class="space-y-6">
                             <div class="flex items-start space-x-4">
-                                <i class="fas fa-map-marker-alt text-2xl themed-icon-accent mt-1"></i>
+                                <i class="fas fa-map-marker-alt text-2xl text-blue-500 mt-1"></i>
                                 <div>
                                     <h3 class="text-lg font-semibold">Our Address</h3>
-                                    <p class="themed-text-secondary">Remote</p>
+                                    <p class="text-gray-400">Remote</p>
                                 </div>
                             </div>
                              <div class="flex items-start space-x-4">
-                                <i class="fas fa-envelope text-2xl themed-icon-accent mt-1"></i>
+                                <i class="fas fa-envelope text-2xl text-blue-500 mt-1"></i>
                                 <div>
                                     <h3 class="text-lg font-semibold">Email Us</h3>
-                                    <a href="mailto:theintelliverse@gmail.com" class="themed-text-secondary hover:underline">theintelliverse@gmail.com</a>
+                                    <a href="mailto:theintelliverse@gmail.com" class="text-gray-400 hover:underline">theintelliverse@gmail.com</a>
                                 </div>
                             </div>
-
-                             <!-- <div class="flex items-start space-x-4">
-                                <i class="fas fa-phone text-2xl themed-icon-accent mt-1"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold">Call Us</h3>
-                                    <p class="themed-text-secondary"></p>
-                                    <p class="themed-text-secondary"></p>
-                                </div>
-                            </div> -->
-
                             <div class="flex items-center space-x-4">
                                 <h3 class="text-lg font-semibold">Follow Us:</h3>
-                                <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent text-2xl"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
                     </div>
@@ -574,31 +609,30 @@
             </div>
         </section>
 
-        <section id="admin-panel" class="py-20 themed-bg-secondary hidden">
+        <section id="admin-panel" class="py-20 bg-gray-900 hidden">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center mb-8">Admin Content Manager</h2>
-                <div class="max-w-4xl mx-auto themed-bg-card p-8 rounded-lg space-y-6">
+                <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg space-y-6">
                     <div>
                         <h3 class="text-xl font-semibold mb-2">Hero Section</h3>
-                        <input id="admin-hero-title" type="text" class="w-full p-2 themed-bg-secondary rounded">
-                        <textarea id="admin-hero-subtitle" class="w-full p-2 themed-bg-secondary rounded mt-2" rows="2"></textarea>
+                        <textarea id="admin-hero-subtitle" class="w-full p-2 bg-gray-900 text-white rounded mt-2" rows="2"></textarea>
                     </div>
                     <div>
                         <h3 class="text-xl font-semibold mb-2">About Section</h3>
-                        <textarea id="admin-about-p1" class="w-full p-2 themed-bg-secondary rounded mt-2" rows="3"></textarea>
+                        <textarea id="admin-about-p1" class="w-full p-2 bg-gray-900 text-white rounded mt-2" rows="3"></textarea>
                     </div>
                     <button id="save-content-btn" class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Save Changes</button>
-                    <p class="text-sm themed-text-secondary text-center mt-4">Note: Changes are for demonstration and will reset on page reload.</p>
+                    <p class="text-sm text-gray-400 text-center mt-4">Note: Changes are for demonstration and will reset on page reload.</p>
                 </div>
             </div>
         </section>
     </main>
     
-    <footer class="themed-bg-primary py-8">
-        <div class="container mx-auto px-6 text-center themed-text-secondary">
+    <footer class="bg-gray-900 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
             <div class="flex justify-center space-x-6 mb-4">
-                 <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent text-2xl footer-icon"><i class="fab fa-linkedin"></i></a>
-                 <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="themed-text-secondary hover:themed-icon-accent text-2xl footer-icon"><i class="fab fa-instagram"></i></a>
+                 <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-linkedin"></i></a>
+                 <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-instagram"></i></a>
             </div>
             <p>&copy; 2024 The Intelliverse. All Rights Reserved.</p>
             <a href="#" id="admin-link" class="text-sm hover:underline hidden">Admin Access</a>
@@ -609,10 +643,9 @@
         <div id="chatbot-window">
             <div id="chat-header" class="flex justify-between items-center">
                 <span>Intelliverse Assistant</span>
-                <button id="clear-chat-btn" class="text-xs themed-text-secondary hover:themed-text-primary">Clear</button>
+                <button id="clear-chat-btn" class="text-xs text-gray-400 hover:text-white">Clear</button>
             </div>
-            <div id="chat-messages">
-                </div>
+            <div id="chat-messages"></div>
             <div id="quick-replies-container"></div>
             <div id="chat-input-container">
                 <input type="text" id="chat-input" placeholder="Ask a question...">
@@ -627,32 +660,27 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
-        // --- CONTENT MANAGEMENT OBJECT ---
-        let contentData = {
-            hero: {
-                title: "Welcome to The Intelliverse",
-                subtitle: "Your one-stop solution for software development, web development, and IT services."
-            },
-            about: {
-                p1: "The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age."
-            },
-        };
-
-        // --- RENDER FUNCTION ---
-        function renderContent() {
-            document.getElementById('hero-subtitle').innerText = contentData.hero.subtitle;
-            document.getElementById('about-p1').innerText = contentData.about.p1;
-        }
-
         document.addEventListener('DOMContentLoaded', () => {
+            const contentData = {
+                hero: {
+                    subtitle: "Your one-stop solution for software development, web development, and IT services."
+                },
+                about: {
+                    p1: "The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age."
+                },
+            };
+
+            function renderContent() {
+                document.getElementById('hero-subtitle').innerText = contentData.hero.subtitle;
+                document.getElementById('about-p1').innerText = contentData.about.p1;
+            }
+
             renderContent();
             
-            const preloader = document.getElementById('preloader');
             window.addEventListener('load', () => {
-                preloader.style.display = 'none';
+                document.getElementById('preloader').style.display = 'none';
             });
             
-            // Typed.js animation for hero title
             new Typed('#typed-hero', {
                 strings: ['Welcome to The Intelliverse', 'Innovation, Create & Grow', 'Your Digital Partner'],
                 typeSpeed: 50,
@@ -660,22 +688,43 @@
                 loop: true
             });
 
-            // --- FIX: IMPROVED MOBILE MENU LOGIC ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-open-icon');
+            const closeIcon = document.getElementById('menu-close-icon');
+
             mobileMenuButton.addEventListener('click', () => {
                 const isOpened = mobileMenu.classList.toggle('open');
                 mobileMenuButton.setAttribute('aria-expanded', isOpened);
+                
+                if (isOpened) {
+                    mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
+                    openIcon.classList.add('opacity-0', '-rotate-90');
+                    closeIcon.classList.remove('opacity-0', 'rotate-90');
+                } else {
+                    mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
+                    openIcon.classList.remove('opacity-0', '-rotate-90');
+                    closeIcon.classList.add('opacity-0', 'rotate-90');
+                }
             });
 
             const header = document.getElementById('header');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('themed-bg-secondary', 'shadow-lg');
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > 50) {
+                    header.classList.add('scrolled');
                 } else {
-                    header.classList.remove('themed-bg-secondary', 'shadow-lg');
+                    header.classList.remove('scrolled');
                 }
-            });
+                if (scrollTop > lastScrollTop && scrollTop > 100) { // On scroll down
+                    header.style.top = "-100px";
+                } else { // On scroll up
+                    header.style.top = "0";
+                }
+                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+            }, false);
+
 
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -683,10 +732,12 @@
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                    // --- FIX: Close menu using the new class ---
                     if (mobileMenu.classList.contains('open')) {
                         mobileMenu.classList.remove('open');
+                        mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
                         mobileMenuButton.setAttribute('aria-expanded', 'false');
+                        openIcon.classList.remove('opacity-0', '-rotate-90');
+                        closeIcon.classList.add('opacity-0', 'rotate-90');
                     }
                 });
             });
@@ -709,13 +760,10 @@
                 e.preventDefault();
                 const formData = new FormData(this);
                 const object = {};
-                formData.forEach((value, key) => {
-                    object[key] = value;
-                });
+                formData.forEach((value, key) => { object[key] = value; });
                 const json = JSON.stringify(object);
                 formMessage.innerHTML = "Sending...";
-                formMessage.classList.remove('text-green-500', 'text-red-500');
-                formMessage.classList.add('themed-text-secondary');
+                formMessage.className = 'mt-4 text-center text-gray-400';
 
                 fetch('https://api.web3forms.com/submit', {
                     method: 'POST',
@@ -731,17 +779,15 @@
                         formMessage.innerHTML = "Message sent successfully!";
                         formMessage.classList.add('text-green-500');
                     } else {
-                        console.log(response);
                         formMessage.innerHTML = json.message || "Something went wrong!";
                         formMessage.classList.add('text-red-500');
                     }
                 })
                 .catch(error => {
-                    console.log(error);
                     formMessage.innerHTML = "Something went wrong!";
                     formMessage.classList.add('text-red-500');
                 })
-                .then(function () {
+                .finally(() => {
                     contactForm.reset();
                     setTimeout(() => {
                         formMessage.innerHTML = '';
@@ -749,7 +795,42 @@
                 });
             });
 
-            // --- CHATBOT LOGIC ---
+            // --- Counter Animation for Stats Section ---
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; // The lower the #, the faster the count
+
+            const animateCounters = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const updateCount = () => {
+                            const target = +counter.getAttribute('data-target');
+                            const count = +counter.innerText;
+                            const inc = target / speed;
+
+                            if (count < target) {
+                                counter.innerText = Math.ceil(count + inc);
+                                setTimeout(updateCount, 10);
+                            } else {
+                                counter.innerText = target;
+                            }
+                        };
+                        updateCount();
+                        observer.unobserve(counter); // Stop observing once animated
+                    }
+                });
+            };
+
+            const counterObserver = new IntersectionObserver(animateCounters, {
+                root: null,
+                threshold: 0.5
+            });
+
+            counters.forEach(counter => {
+                counterObserver.observe(counter);
+            });
+
+            // Chatbot Logic
             const chatbotBubble = document.getElementById('chatbot-bubble');
             const chatbotWindow = document.getElementById('chatbot-window');
             const chatHeader = document.getElementById('chat-header');
@@ -760,56 +841,22 @@
             const quickRepliesContainer = document.getElementById('quick-replies-container');
 
             const botKnowledge = [
-                {
-                    keywords: ['service', 'what do you do', 'offer', 'build'],
-                    response: "We offer Web Development, Software Development, and IT Services to bring your digital ideas to life."
-                },
-                {
-                    keywords: ['founder', 'team', 'who are you', 'about'],
-                    response: "The Intelliverse was co-founded by ******* and *******. We are a dynamic software development company."
-                },
-                {
-                    keywords: ['location', 'where are you', 'address'],
-                    response: "We are based in Ahmedabad, Gujarat, India."
-                },
-                {
-                    keywords: ['contact', 'email', 'phone', 'reach you'],
-                    response: "You can email us at theintelliverse@gmail.com, call us, or follow us on LinkedIn and Instagram. All details are on the contact section of our website."
-                },
-                {
-                    keywords: ['tech', 'stack', 'technology'],
-                    response: "We use modern technologies like React, Node.js, and Python to build robust applications."
-                },
-                {
-                    keywords: ['process', 'how do you work'],
-                    response: "Our process involves consultation, design, development, testing, and deployment to ensure the highest quality."
-                },
-                {
-                    keywords: ['price', 'quote', 'cost', 'how much'],
-                    response: "Pricing varies depending on the project scope. Please use the contact form to get in touch for a detailed quote."
-                },
-                {
-                    keywords: ['hello', 'hi', 'hey'],
-                    response: "Hello there! How can I assist you today?"
-                }
+                { keywords: ['service', 'what do you do', 'offer'], response: "We offer Web Development, Software Development, and IT Services." },
+                { keywords: ['founder', 'team', 'who are you', 'about'], response: "The Intelliverse is a dynamic software development company led by our expert founders." },
+                { keywords: ['contact', 'email', 'phone'], response: "You can email us at theintelliverse@gmail.com. All details are on the contact section." },
+                { keywords: ['price', 'quote', 'cost'], response: "Pricing varies by project. Please use the contact form for a detailed quote." },
+                { keywords: ['hello', 'hi', 'hey'], response: "Hello! How can I help you today?" }
             ];
-            
-            const quickReplies = [
-                "What services do you offer?",
-                "Who are the founders?",
-                "How can I get a quote?"
-            ];
+            const quickReplies = ["What services do you offer?", "Who are the founders?", "How can I get a quote?"];
 
             const getBotResponse = (userInput) => {
                 const lowerInput = userInput.toLowerCase();
                 for (const item of botKnowledge) {
-                    for (const keyword of item.keywords) {
-                        if (lowerInput.includes(keyword)) {
-                            return item.response;
-                        }
+                    if (item.keywords.some(keyword => lowerInput.includes(keyword))) {
+                        return item.response;
                     }
                 }
-                return "I can answer questions about our services, founders, and location. For more specific inquiries, please use the contact form.";
+                return "I can answer questions about our services and founders. For more, please use the contact form.";
             };
 
             const addMessage = (message, sender) => {
@@ -819,14 +866,19 @@
                 chatMessages.appendChild(messageElement);
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             };
-
-            const showTypingIndicator = () => {
-                const typingElement = document.createElement('div');
-                typingElement.classList.add('chat-message', 'typing-indicator');
-                typingElement.innerHTML = '<span></span><span></span><span></span>';
-                chatMessages.appendChild(typingElement);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-                return typingElement;
+            
+            const handleChat = () => {
+                const userInput = chatInput.value.trim();
+                if (!userInput) return;
+                addMessage(userInput, 'user');
+                chatInput.value = '';
+                quickRepliesContainer.innerHTML = '';
+                
+                setTimeout(() => {
+                    const botResponse = getBotResponse(userInput);
+                    addMessage(botResponse, 'bot');
+                    showQuickReplies();
+                }, 1000);
             };
             
             const showQuickReplies = () => {
@@ -846,77 +898,18 @@
                 quickRepliesContainer.appendChild(container);
             };
 
-            const handleChat = () => {
-                const userInput = chatInput.value.trim();
-                if (!userInput) return;
-
-                addMessage(userInput, 'user');
-                chatInput.value = '';
-                quickRepliesContainer.innerHTML = '';
-
-                const typingIndicator = showTypingIndicator();
-
-                setTimeout(() => {
-                    chatMessages.removeChild(typingIndicator);
-                    const botResponse = getBotResponse(userInput);
-                    addMessage(botResponse, 'bot');
-                    showQuickReplies();
-                }, 1500);
-            };
-            
             const initializeChat = () => {
                 chatMessages.innerHTML = '';
-                addMessage("Hello! How can I help you today? Ask me about our services, founders, or location.", 'bot');
+                addMessage("Hello! How can I help you today?", 'bot');
                 showQuickReplies();
             };
 
             chatbotBubble.addEventListener('click', () => chatbotWindow.classList.toggle('open'));
             chatSend.addEventListener('click', handleChat);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') handleChat();
-            });
+            chatInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleChat());
             clearChatBtn.addEventListener('click', initializeChat);
             
-            // Draggable chatbot window
-            let isDragging = false;
-            let offset = { x: 0, y: 0 };
-            chatHeader.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                offset.x = e.clientX - chatbotWindow.offsetLeft;
-                offset.y = e.clientY - chatbotWindow.offsetTop;
-            });
-            document.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                chatbotWindow.style.left = `${e.clientX - offset.x}px`;
-                chatbotWindow.style.top = `${e.clientY - offset.y}px`;
-            });
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
-
             initializeChat();
-            
-            // ADMIN PANEL LOGIC
-            const adminPanel = document.getElementById('admin-panel');
-            const saveContentBtn = document.getElementById('save-content-btn');
-            const adminLink = document.getElementById('admin-link');
-
-            adminLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                adminPanel.classList.remove('hidden');
-                document.getElementById('admin-hero-title').value = contentData.hero.title;
-                document.getElementById('admin-hero-subtitle').value = contentData.hero.subtitle;
-                document.getElementById('admin-about-p1').value = contentData.about.p1;
-                adminPanel.scrollIntoView({ behavior: 'smooth' });
-            });
-
-            saveContentBtn.addEventListener('click', () => {
-                contentData.hero.title = document.getElementById('admin-hero-title').value;
-                contentData.hero.subtitle = document.getElementById('admin-hero-subtitle').value;
-                contentData.about.p1 = document.getElementById('admin-about-p1').value;
-                renderContent();
-                alert("Content updated! (Changes will reset on refresh)");
-            });
         });
 
         particlesJS('particles-js', {
@@ -939,3 +932,4 @@
     </script>
 </body>
 </html>
+
