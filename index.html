@@ -1,936 +1,1222 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Intelliverse - Your Innovation Partner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="The Intelliverse is your innovation partner, offering expert software development, web development, and comprehensive IT services to empower your business in the digital age.">
-    <meta name="keywords" content="The Intelliverse, software development, web development, IT services, custom software, mobile applications, tech solutions, innovation partner">
-    <meta name="author" content="The Intelliverse">
-    <!-- IMPORTANT: Replace '#' with your actual domain for production -->
-    <link rel="canonical" href="https://dhruvilthummar.github.io/The-Intelliverse/">
+  <!-- SEO: Primary Meta Tags -->
+  <title>The Intelliverse - Your Innovation Partner in Software & Web Development</title>
+  <meta name="description"
+    content="The Intelliverse is your innovation partner, offering expert software development, web development, and comprehensive IT services to empower your business in the digital age.">
+  <meta name="keywords"
+    content="The Intelliverse, software development, web development, IT services, custom software, mobile applications, tech solutions, innovation partner, Ahmedabad, Gujarat">
+  <meta name="author" content="The Intelliverse">
+  <link rel="canonical" href="https://dhruvilthummar.github.io/The-Intelliverse/">
 
-    <!-- Open Graph Meta Tags (for social media sharing like Facebook, LinkedIn) -->
-    <meta property="og:title" content="The Intelliverse - Your Innovation Partner">
-    <meta property="og:description" content="Expert software development, web development, and IT services to empower your business.">
-    <!-- IMPORTANT: Replace with a full URL to an image for social sharing (e.g., https://yourdomain.com/og-image.jpg) -->
-    <meta property="og:image" content="the intelliverse logo.jpg">
-    <meta property="og:url" content="https://dhruvilthummar.github.io/The-Intelliverse/"> <!-- IMPORTANT: Replace '#' with your actual domain -->
-    <meta property="og:type" content="website">
+  <!-- SEO: Control search engine behavior -->
+  <meta name="robots" content="index, follow" />
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="The Intelliverse - Your Innovation Partner">
-    <meta name="twitter:description" content="Expert software development, web development, and IT services to empower your business.">
-    <!-- IMPORTANT: Replace with a full URL to an image for Twitter sharing (e.g., https://yourdomain.com/twitter-image.jpg) -->
-    <meta name="twitter:image" content="the intelliverse logo.jpg">
+  <!-- SEO: Geographic Meta Tags for Local Search -->
+  <meta name="geo.region" content="IN-GJ" />
+  <meta name="geo.placename" content="Ahmedabad" />
+  <meta name="geo.position" content="23.0225;72.5714" />
+  <meta name="ICBM" content="23.0225, 72.5714" />
+
+  <!-- UI/Browser Theming -->
+  <meta name="theme-color" content="#111827" />
+
+  <!-- SEO: Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Intelliverse" />
+  <meta property="og:url" content="https://dhruvilthummar.github.io/The-Intelliverse/">
+  <meta property="og:title" content="The Intelliverse - Your Innovation Partner">
+  <meta property="og:description"
+    content="Expert software development, web development, and IT services to empower your business.">
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg">
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:updated_time" content="2025-09-10T20:52:00+05:30" />
+
+
+  <!-- SEO: Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Intelliverse - Your Innovation Partner">
+  <meta name="twitter:description"
+    content="Expert software development, web development, and IT services to empower your business.">
+  <meta name="twitter:image"
+    content="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg">
+
+  <!-- SEO: Dublin Core Metadata -->
+  <meta name="DC.title" content="The Intelliverse - Your Innovation Partner" />
+  <meta name="DC.creator" content="The Intelliverse" />
+  <meta name="DC.description"
+    content="The Intelliverse offers expert software development, web development, and IT services." />
+  <meta name="DC.language" content="en" />
+  <meta name="DC.rights" content="Copyright 2024 The Intelliverse" />
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg"
+    type="image/jpeg" />
+  <link rel="apple-touch-icon"
+    href="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg" />
+
+  <!-- SEO: Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "The Intelliverse",
+    "url": "https://dhruvilthummar.github.io/The-Intelliverse/",
+    "logo": "https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "theintelliverse@gmail.com",
+      "contactType": "Customer Service"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/the-intelliverse/",
+      "https://www.instagram.com/the_intelliverse/"
+    ],
+    "description": "A dynamic software development company dedicated to providing innovative solutions in web development, mobile applications, and comprehensive IT services.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "addressCountry": "IN"
+    },
+    "knowsAbout": ["Software Development", "Web Development", "IT Services", "Mobile Applications"]
+  }
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-primary: #111827;
+      --bg-secondary: #1f2937;
+      --bg-card: #1f2937;
+      --text-primary: #ffffff;
+      --text-secondary: #d1d5db;
+      --accent-primary: #3b82f6;
+      --accent-hover: #2563eb;
+      --border-color: #374151;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--bg-primary);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .preloader-logo {
+      width: 120px;
+      border-radius: 50%;
+      animation: pulse-glow-preloader 2.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse-glow-preloader {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 24px 0 #3b82f699, 0 0 8px 2px #2563eb66;
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 40px 8px #2563eb99, 0 0 16px 4px #3b82f666;
+      }
+    }
+
+    .loading-dots span {
+      height: 10px;
+      width: 10px;
+      background-color: var(--text-secondary);
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 4px;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .loading-dots span:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .loading-dots span:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+
+    /* --- Persistent Background --- */
+    #persistent-bg {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.95));
+      background-size: cover;
+      background-position: center;
+      animation: kenburns 20s ease-out infinite;
+      width: 100%;
+      z-index: 1;
+    }
+
+    @keyframes kenburns {
+      0% {
+        transform: scale(1.1);
+      }
+
+      50% {
+        transform: scale(1.3);
+      }
+
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+
+    /* --- Stacking context for content --- */
+    header,
+    main,
+    footer,
+    #chatbot-container {
+      position: relative;
+      z-index: 10;
+    }
+
+    /* --- Glassmorphism header --- */
+    #header {
+      background-color: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-background-text {
+      color: rgba(255, 255, 255, 0.08);
+      font-size: 8rem;
+      font-weight: 800;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      user-select: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+      letter-spacing: 0.1em;
+      line-height: 1;
+      pointer-events: none;
+      text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+      text-align: center;
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .reveal-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .service-card {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    @media (hover: hover) {
+      .service-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .service-card:active {
+      transform: translateY(-5px) scale(0.98);
+    }
+
+    .team-card {
+      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px) perspective(1000px) rotateX(5deg) rotateY(-5deg);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .animated-button {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .animated-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .animated-button:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .footer-icon {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .footer-icon:hover {
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    .testimonial-carousel-container {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .testimonial-carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-carousel {
+      display: flex;
+    }
+
+    .testimonial-card {
+      width: 90%;
+      max-width: 350px;
+      flex-shrink: 0;
+      scroll-snap-align: center;
+    }
+
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+    }
+
+    #chatbot-bubble {
+      width: 60px;
+      height: 60px;
+      background-color: var(--accent-primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: transform 0.3s, background-color 0.5s;
+    }
+
+    #chatbot-bubble:hover {
+      transform: scale(1.1);
+    }
+
+    #chatbot-window {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: calc(100vw - 40px);
+      max-width: 350px;
+      height: 70vh;
+      max-height: 500px;
+      background-color: var(--bg-secondary);
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      transform: scale(0.95);
+      opacity: 0;
+      transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.5s;
+      transform-origin: bottom right;
+    }
+
+    #chatbot-window.open {
+      display: flex;
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    #chat-header {
+      padding: 1rem;
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      font-weight: bold;
+      text-align: center;
+      cursor: move;
+    }
+
+    #chat-messages {
+      flex-grow: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .chat-message {
+      padding: 0.75rem 1rem;
+      border-radius: 1rem;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+
+    .user-message {
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+      align-self: flex-end;
+      border-bottom-right-radius: 0;
+    }
+
+    .bot-message {
+      background-color: var(--bg-card);
+      color: var(--text-secondary);
+      align-self: flex-start;
+      border-bottom-left-radius: 0;
+    }
+
+    .typing-indicator {
+      align-self: flex-start;
+    }
+
+    .typing-indicator span {
+      height: 8px;
+      width: 8px;
+      background-color: var(--text-secondary);
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 2px;
+      animation: bounce 1.4s infinite ease-in-out both;
+    }
+
+    .typing-indicator span:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+      }
+
+      40% {
+        transform: scale(1.0);
+      }
+    }
+
+    #chat-input-container {
+      display: flex;
+      padding: 1rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    #chat-input {
+      flex-grow: 1;
+      border: none;
+      background-color: var(--bg-card);
+      color: var(--text-primary);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      outline: none;
+    }
+
+    #chat-send {
+      margin-left: 0.5rem;
+      background-color: var(--accent-primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+    }
+
+    .quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .quick-reply {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .quick-reply:hover {
+      background-color: var(--accent-primary);
+      color: var(--bg-primary);
+    }
+
+    .themed-accent {
+      background-color: #3b82f6 !important;
+      color: #fff !important;
+      box-shadow: none;
+      border: none;
+    }
+
+    .themed-accent-hover:hover,
+    .animated-button:hover {
+      background-color: #2563eb !important;
+      box-shadow: 0 0 16px 0 #2563eb99, 0 0 8px 2px #3b82f6cc;
+      color: #fff !important;
+      border: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
+    }
+
+    .logo-glow {
+      border-radius: 50%;
+      box-shadow: 0 0 24px 0 #3b82f6cc, 0 0 8px 2px #2563eb99;
+      background: transparent;
+      transition: box-shadow 0.4s;
+    }
+
+    .logo-glow:hover {
+      box-shadow: 0 0 40px 8px #2563ebcc, 0 0 16px 4px #3b82f6cc;
+    }
+
+    .animated-vision-bg {
+      background: linear-gradient(270deg, #1f2937, #2563eb, #111827, #3b82f6);
+      background-size: 400% 400%;
+      animation: gradient-flow 12s ease infinite;
+    }
+
+    @keyframes gradient-flow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .vision-content-animate {
+      animation: pulse-glow 6s ease-in-out infinite;
+    }
+
+    @keyframes pulse-glow {
+
+      0%,
+      100% {
+        transform: scale(1);
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+      }
+
+      50% {
+        transform: scale(1.05);
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* New Sidebar Styles */
+    #sidebar-menu.open {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black/60 z-40 hidden transition-opacity duration-300"></div>
+  <aside id="sidebar-menu"
+    class="fixed top-0 left-0 h-full w-72 bg-gray-900/50 backdrop-blur-xl border-r border-gray-700 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <div class="p-5 flex justify-between items-center border-b border-gray-800">
+      <h2 class="text-xl font-bold text-white">Menu</h2>
+      <button id="sidebar-close-btn" class="text-gray-400 hover:text-white text-2xl">&times;</button>
+    </div>
+    <nav class="flex flex-col p-5 space-y-2">
+      <a href="#home"
+        class="sidebar-link text-gray-300 hover:text-white hover:bg-gray-800/50 p-3 rounded-md transition-colors">Home</a>
+      <a href="#about"
+        class="sidebar-link text-gray-300 hover:text-white hover:bg-gray-800/50 p-3 rounded-md transition-colors">About</a>
+      <a href="#services"
+        class="sidebar-link text-gray-300 hover:text-white hover:bg-gray-800/50 p-3 rounded-md transition-colors">Services</a>
+      <a href="#team"
+        class="sidebar-link text-gray-300 hover:text-white hover:bg-gray-800/50 p-3 rounded-md transition-colors">Team</a>
+      <a href="#contact"
+        class="sidebar-link text-gray-300 hover:text-white hover:bg-gray-800/50 p-3 rounded-md transition-colors">Contact</a>
+    </nav>
+  </aside>
+
+
+  <div id="persistent-bg">
+    <div class="hero-background"></div>
+    <div id="particles-js"></div>
+  </div>
+
+  <div id="preloader">
+    <div class="preloader-content">
+      <img
+        src="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg"
+        alt="The Intelliverse Logo Loading" class="preloader-logo">
+      <div class="loading-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <header id="header" class="fixed top-0 left-0 w-full z-30 transition-all duration-500">
+    <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
+      <!-- Left side: Menu Button and Logo -->
+      <div class="flex items-center gap-4">
+        <button id="menu-toggle-btn" class="text-white focus:outline-none p-2 relative h-8 w-8 z-10"
+          aria-controls="sidebar-menu" aria-expanded="false">
+          <i class="fas fa-bars text-2xl"></i>
+          <span class="sr-only">Open navigation menu</span>
+        </button>
+        <a href="#home" class="flex items-center gap-3 text-xl sm:text-2xl font-bold z-10">
+          <img
+            src="https://raw.githubusercontent.com/DhruvilThummar/The-Intelliverse/06e4998906bcd13f5d1dd0bdf0ff672bddf85832/the%20intelliverse%20logo.jpg"
+            alt="The Intelliverse Logo" class="h-12 logo-glow">
+          <span class="whitespace-nowrap hidden sm:inline">The Intelliverse</span>
+        </a>
+      </div>
+
+
+      <!-- Social Icons for Desktop -->
+      <div class="hidden md:flex items-center space-x-6 z-10">
+        <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer"
+          class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/the_intelliverse/" target="_blank" rel="noopener noreferrer"
+          class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <h1 class="hero-background-text text-4xl md:text-6xl lg:text-8xl whitespace-nowrap" style="font-size: min(8vw, 8rem);" aria-hidden="true">The Intelliverse</h1>
+      <div class="container mx-auto px-6 text-center hero-content">
+        <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-4"><span id="typed-hero"></span></h1>
+        <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 mb-8">Your one-stop solution for software
+          development, web development, and IT services.</p>
+        <a href="#contact"
+          class="themed-accent themed-accent-hover text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 animated-button">Get
+          in Touch</a>
+      </div>
+    </section>
+
+    <section id="about" class="py-20 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">About The Intelliverse</h2>
+          <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2 h-80 md:h-auto rounded-lg shadow-2xl overflow-hidden">
+            <div class="animated-vision-bg w-full h-full flex items-center justify-center p-8">
+              <div class="text-center vision-content-animate">
+                <i class="fas fa-rocket text-6xl text-white opacity-50 mb-4" aria-hidden="true"></i>
+                <h3 class="text-2xl font-bold text-white opacity-90">Our Vision</h3>
+                <p class="text-white opacity-70 mt-2">To be at the forefront of digital innovation, creating solutions
+                  that drive progress.</p>
+              </div>
+            </div>
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-semibold mb-4">Innovation, Create & Grow</h3>
+            <p id="about-p1" class="text-gray-300 mb-4">The Intelliverse is a dynamic software development company
+              dedicated to providing innovative solutions. We specialize in web development, mobile applications, and
+              comprehensive IT services that empower businesses to thrive in the digital age.</p>
+            <p class="text-gray-300">Our mission is to transform your ideas into powerful digital realities, ensuring
+              growth and success through technology and creativity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="py-20 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
+          <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div class="text-blue-500 mb-4"><i class="fas fa-laptop-code text-4xl" aria-hidden="true"></i></div>
+            <h3 class="text-xl font-bold mb-2">Web Development</h3>
+            <p class="text-gray-400">Crafting beautiful, responsive, and high-performing websites tailored to your
+              business needs.</p>
+          </div>
+          <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div class="text-blue-500 mb-4"><i class="fas fa-cogs text-4xl" aria-hidden="true"></i></div>
+            <h3 class="text-xl font-bold mb-2">Software Development</h3>
+            <p class="text-gray-400">Building custom software solutions to streamline your operations and drive
+              efficiency.</p>
+          </div>
+          <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
+            <div class="text-blue-500 mb-4"><i class="fas fa-shield-alt text-4xl" aria-hidden="true"></i></div>
+            <h3 class="text-xl font-bold mb-2">IT Services</h3>
+            <p class="text-gray-400">Providing reliable IT support and services to keep your business running smoothly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!--
-    SEO Note: For optimal search engine performance, remember to:
-    1. Create a 'robots.txt' file in your website's root directory to guide search engine crawlers.
-    2. Generate and submit a 'sitemap.xml' file to Google Search Console to help index your pages.
+    <section id="team" class="py-20 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">Meet the Founders</h2>
+          <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </div>
+        <div class="flex flex-wrap gap-8 justify-center">
+          <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+            <img class="w-32 h-32 rounded-full mx-auto mb-4"
+              src="https://placehold.co/200x200/4a5568/ffffff?text=Founder" alt="Photo of the Founder">
+            <h3 class="text-xl font-bold mb-1">Founder</h3>
+            <p class="text-gray-400 mb-3">Founder</p>
+            <div class="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+            <img class="w-32 h-32 rounded-full mx-auto mb-4"
+              src="https://placehold.co/200x200/4a5568/ffffff?text=Co-Founder" alt="Photo of the Co-Founder">
+            <h3 class="text-xl font-bold mb-1">Co-Founder</h3>
+            <p class="text-gray-400 mb-3">Co-Founder</p>
+            <div class="flex justify-center space-x-4">
+              <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer"
+                class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="py-20 bg-gray-800/50 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          <div>
+            <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="50">0</span>+</h3>
+            <p class="text-gray-400 mt-2">Projects Completed</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="100">0</span>%</h3>
+            <p class="text-gray-400 mt-2">Client Satisfaction</p>
+          </div>
+          <div>
+            <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="30">0</span>+</h3>
+            <p class="text-gray-400 mt-2">Happy Clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="py-20 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">What Our Clients Say</h2>
+          <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </div>
+        <div class="relative w-full bg-gray-900 bg-opacity-75 p-8 rounded-lg testimonial-carousel-container">
+          <div class="testimonial-carousel">
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an
+              outstanding product on time and on budget. Highly recommended!" - Client A</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with.
+              Professional, creative, and highly skilled." - Client B</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a
+              significant increase in traffic thanks to their expertise." - Client C</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"They transformed our vision into a
+              reality. Exceptional work!" - Client D</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an
+              outstanding product on time and on budget. Highly recommended!" - Client E</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with.
+              Professional, creative, and highly skilled." - Client F</div>
+            <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a
+              significant increase in traffic thanks to their expertise." - Client G</div>
+          </div>
+        </div>
+      </div>
+    </section>
     -->
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --bg-primary: #111827;
-            --bg-secondary: #1f2937;
-            --bg-card: #1f2937;
-            --text-primary: #ffffff;
-            --text-secondary: #d1d5db;
-            --accent-primary: #3b82f6;
-            --accent-hover: #2563eb;
-            --border-color: #374151;
-        }
+    <section id="contact" class="py-20 reveal-on-scroll">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">Contact Us</h2>
+          <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12">
+          <div class="md:w-1/2">
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="2128b8f3-02b4-48ab-8632-a74674f99b6d">
+              <div class="space-y-6">
+                <input type="text" name="name" placeholder="Your Name"
+                  class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required>
+                <input type="email" name="email" placeholder="Your Email"
+                  class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required>
+                <textarea name="message" placeholder="Your Message" rows="5"
+                  class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  required></textarea>
+                <button type="submit"
+                  class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Send
+                  Message</button>
+              </div>
+            </form>
+            <div id="form-message" class="mt-4 text-center"></div>
+          </div>
+          <div class="md:w-1/2">
+            <div class="space-y-6">
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-map-marker-alt text-2xl text-blue-500 mt-1" aria-hidden="true"></i>
+                <div>
+                  <h3 class="text-lg font-semibold">Our Address</h3>
+                  <p class="text-gray-400">Remote</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-envelope text-2xl text-blue-500 mt-1" aria-hidden="true"></i>
+                <div>
+                  <h3 class="text-lg font-semibold">Email Us</h3>
+                  <a href="mailto:theintelliverse@gmail.com"
+                    class="text-gray-400 hover:underline">theintelliverse@gmail.com</a>
+                </div>
+              </div>
+              <div class="flex items-center space-x-4">
+                <h3 class="text-lg font-semibold">Follow Us:</h3>
+                <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/the_intelliverse/" target="_blank" rel="noopener noreferrer"
+                  class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-primary); /* Fallback background */
-            color: var(--text-primary);
-            transition: background-color 0.5s, color 0.5s;
-        }
-        
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--bg-primary);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .loader {
-            border: 8px solid var(--bg-secondary);
-            border-top: 8px solid var(--accent-primary);
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+    <section id="admin-panel" class="py-20 bg-gray-900 hidden">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Admin Content Manager</h2>
+        <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg space-y-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-2">Hero Section</h3>
+            <textarea id="admin-hero-subtitle" class="w-full p-2 bg-gray-900 text-white rounded mt-2"
+              rows="2"></textarea>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2">About Section</h3>
+            <textarea id="admin-about-p1" class="w-full p-2 bg-gray-900 text-white rounded mt-2" rows="3"></textarea>
+          </div>
+          <button id="save-content-btn"
+            class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Save
+            Changes</button>
+          <p class="text-sm text-gray-400 text-center mt-4">Note: Changes are for demonstration and will reset on page
+            reload.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        /* --- Persistent Background --- */
-        #persistent-bg {
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-        .hero-background {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.95));
-            background-size: cover;
-            background-position: center;
-            animation: kenburns 20s ease-out infinite;
-            width: 100%;
-            z-index: 1;
-        }
-        @keyframes kenburns {
-            0% { transform: scale(1.1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1.1); }
-        }
-
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 2;
-        }
-        /* --- Stacking context for content --- */
-        header, main, footer, #chatbot-container {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* --- Glassmorphism header on scroll --- */
-        header.scrolled {
-            background-color: rgba(31, 41, 55, 0.75);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-        }
-        
-        .hero-background-text {
-            color: rgba(255, 255, 255, 0.08);
-            font-size: clamp(48px, 14vw, 220px);
-            font-weight: 800;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-            user-select: none;
-            text-transform: uppercase;
-            white-space: nowrap;
-            letter-spacing: 0.1em;
-            line-height: 1;
-            pointer-events: none;
-            text-shadow: 0 2px 24px rgba(0,0,0,0.35);
-        }
-
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .reveal-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .service-card {
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        @media (hover: hover) {
-            .service-card:hover {
-                transform: translateY(-10px) scale(1.03);
-                box-shadow: 0 15px 25px rgba(0,0,0,0.2);
-            }
-        }
-        .service-card:active {
-            transform: translateY(-5px) scale(0.98);
-        }
-        
-        .team-card {
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .team-card:hover {
-            transform: translateY(-10px) perspective(1000px) rotateX(5deg) rotateY(-5deg);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.2);
-        }
-
-        .animated-button {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .animated-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .animated-button:active {
-            transform: translateY(0) scale(0.98);
-            box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-        }
-        
-        .nav-link {
-            position: relative;
-            transition: color 0.3s;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--accent-primary);
-            transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .nav-link:hover::after, .nav-link.active::after {
-            width: 100%;
-        }
-        
-        .footer-icon {
-            transition: transform 0.3s ease-in-out;
-        }
-        .footer-icon:hover {
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        .testimonial-carousel-container {
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        .testimonial-carousel-container::-webkit-scrollbar {
-            display: none;
-        }
-        .testimonial-carousel {
-            display: flex;
-        }
-        .testimonial-card {
-            width: 90%;
-            max-width: 350px;
-            flex-shrink: 0;
-            scroll-snap-align: center;
-        }
-        
-        #chatbot-container { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-        #chatbot-bubble { width: 60px; height: 60px; background-color: var(--accent-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25); transition: transform 0.3s, background-color 0.5s; }
-        #chatbot-bubble:hover { transform: scale(1.1); }
-        #chatbot-window {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            width: calc(100vw - 40px);
-            max-width: 350px;
-            height: 70vh;
-            max-height: 500px;
-            background-color: var(--bg-secondary);
-            border-radius: 1rem;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            display: none;
-            flex-direction: column;
-            overflow: hidden;
-            transform: scale(0.95);
-            opacity: 0;
-            transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.5s;
-            transform-origin: bottom right;
-        }
-        #chatbot-window.open {
-            display: flex;
-            transform: scale(1);
-            opacity: 1;
-        }
-        #chat-header { padding: 1rem; background-color: var(--bg-card); color: var(--text-primary); font-weight: bold; text-align: center; cursor: move; }
-        #chat-messages { flex-grow: 1; padding: 1rem; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; }
-        .chat-message { padding: 0.75rem 1rem; border-radius: 1rem; max-width: 80%; line-height: 1.4; }
-        .user-message { background-color: var(--accent-primary); color: var(--bg-primary); align-self: flex-end; border-bottom-right-radius: 0; }
-        .bot-message { background-color: var(--bg-card); color: var(--text-secondary); align-self: flex-start; border-bottom-left-radius: 0; }
-        .typing-indicator { align-self: flex-start; }
-        .typing-indicator span { height: 8px; width: 8px; background-color: var(--text-secondary); border-radius: 50%; display: inline-block; margin: 0 2px; animation: bounce 1.4s infinite ease-in-out both; }
-        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1.0); } }
-        #chat-input-container { display: flex; padding: 1rem; border-top: 1px solid var(--border-color); }
-        #chat-input { flex-grow: 1; border: none; background-color: var(--bg-card); color: var(--text-primary); padding: 0.75rem; border-radius: 0.75rem; outline: none; }
-        #chat-send { margin-left: 0.5rem; background-color: var(--accent-primary); color: white; border: none; padding: 0.75rem 1rem; border-radius: 0.75rem; cursor: pointer; }
-        .quick-replies { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem 1rem; }
-        .quick-reply { background-color: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 1rem; cursor: pointer; transition: background-color 0.3s; }
-        .quick-reply:hover { background-color: var(--accent-primary); color: var(--bg-primary); }
-
-        .themed-accent {
-            background-color: #3b82f6 !important;
-            color: #fff !important;
-            box-shadow: none;
-            border: none;
-        }
-        .themed-accent-hover:hover,
-        .animated-button:hover {
-            background-color: #2563eb !important;
-            box-shadow: 0 0 16px 0 #2563eb99, 0 0 8px 2px #3b82f6cc;
-            color: #fff !important;
-            border: none;
-        }
-        
-        #mobile-menu {
-            background-color: var(--bg-secondary);
-            opacity: 0;
-            transform: translateY(-1rem);
-            pointer-events: none;
-            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        }
-        #mobile-menu.open {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        /* --- Smoother Mobile Menu Item Animation --- */
-        #mobile-menu.open a {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        #mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
-        #mobile-menu.open a:nth-child(2) { transition-delay: 0.15s; }
-        #mobile-menu.open a:nth-child(3) { transition-delay: 0.2s; }
-        #mobile-menu.open a:nth-child(4) { transition-delay: 0.25s; }
-        #mobile-menu.open a:nth-child(5) { transition-delay: 0.3s; }
-
-        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-            outline: 2px solid var(--accent-primary);
-            outline-offset: 2px;
-            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4);
-        }
-
-        .logo-glow {
-            border-radius: 50%;
-            box-shadow: 0 0 24px 0 #3b82f6cc, 0 0 8px 2px #2563eb99;
-            background: transparent;
-            transition: box-shadow 0.4s;
-        }
-        .logo-glow:hover {
-            box-shadow: 0 0 40px 8px #2563ebcc, 0 0 16px 4px #3b82f6cc;
-        }
-
-        .animated-vision-bg {
-            background: linear-gradient(270deg, #1f2937, #2563eb, #111827, #3b82f6);
-            background-size: 400% 400%;
-            animation: gradient-flow 12s ease infinite;
-        }
-
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        .vision-content-animate {
-            animation: pulse-glow 6s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% {
-                transform: scale(1);
-                text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
-            }
-            50% {
-                transform: scale(1.05);
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-            }
-        }
-        
-        /* #contact-form input,
-        #contact-form textarea {
-            color: #111827 !important;
-            background-color: #fff !important;
-        } */
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="persistent-bg">
-        <div class="hero-background"></div>
-        <div id="particles-js"></div>
+  <footer class="bg-gray-900 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-400">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer"
+          class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/the_intelliverse/" target="_blank" rel="noopener noreferrer"
+          class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 The Intelliverse. All Rights Reserved.</p>
+      <a href="#" id="admin-link" class="text-sm hover:underline hidden">Admin Access</a>
     </div>
+  </footer>
 
-    <div id="preloader">
-        <div class="loader"></div>
+  <div id="chatbot-container">
+    <div id="chatbot-window">
+      <div id="chat-header" class="flex justify-between items-center">
+        <span>Intelliverse Assistant</span>
+        <button id="clear-chat-btn" class="text-xs text-gray-400 hover:text-white">Clear</button>
+      </div>
+      <div id="chat-messages"></div>
+      <div id="quick-replies-container"></div>
+      <div id="chat-input-container">
+        <input type="text" id="chat-input" placeholder="Ask a question...">
+        <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
+      </div>
     </div>
-
-    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
-        <nav class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#home" class="flex items-center gap-3 text-xl sm:text-2xl font-bold z-10">
-                <img src="the intelliverse logo.jpg" alt="The Intelliverse Logo" class="h-12 logo-glow">
-                <span class="whitespace-nowrap hidden sm:inline">The Intelliverse</span>
-            </a>
-    
-            <!-- Centered Nav Links for Desktop -->
-            <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
-                <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
-                <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
-                <a href="#services" class="nav-link text-gray-300 hover:text-white">Services</a>
-                <a href="#team" class="nav-link text-gray-300 hover:text-white">Team</a>
-                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
-            </div>
-    
-            <!-- Social Icons for Desktop -->
-            <div class="hidden md:flex items-center space-x-6 z-10">
-                 <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
-                 <a href="https://www.instagram.com/the_intelliverse/" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-accent-primary transition-colors text-xl"><i class="fab fa-instagram"></i></a>
-            </div>
-    
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 relative h-8 w-8 z-10" aria-controls="mobile-menu" aria-expanded="false">
-                <i id="menu-open-icon" class="fas fa-bars text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 transform"></i>
-                <i id="menu-close-icon" class="fas fa-times text-2xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 opacity-0 transform rotate-90"></i>
-                <span class="sr-only">Open navigation menu</span>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-gray-900/95 backdrop-blur-sm absolute top-full left-0 w-full opacity-0 -translate-y-4 pointer-events-none transition-all duration-300">
-            <div class="flex flex-col items-center space-y-4 py-4">
-                <a href="#home" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Home</a>
-                <a href="#about" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">About</a>
-                <a href="#services" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Services</a>
-                <a href="#team" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Team</a>
-                <a href="#contact" class="opacity-0 transform -translate-x-4 transition-all duration-300 text-gray-300 hover:text-accent-primary">Contact</a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-            <h1 class="hero-background-text">The Intelliverse</h1>
-            <div class="container mx-auto px-6 text-center hero-content">
-                <h1 id="hero-title" class="text-4xl md:text-6xl font-extrabold mb-4"><span id="typed-hero"></span></h1>
-                <p id="hero-subtitle" class="text-lg md:text-xl text-gray-300 mb-8">Your one-stop solution for software development, web development, and IT services.</p>
-                <a href="#contact" class="themed-accent themed-accent-hover text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 animated-button">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about" class="py-20 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">About The Intelliverse</h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                <div class="flex flex-col md:flex-row items-center gap-12">
-                    <div class="md:w-1/2 h-80 md:h-auto rounded-lg shadow-2xl overflow-hidden">
-                        <div class="animated-vision-bg w-full h-full flex items-center justify-center p-8">
-                            <div class="text-center vision-content-animate">
-                                <i class="fas fa-rocket text-6xl text-white opacity-50 mb-4"></i>
-                                <h4 class="text-2xl font-bold text-white opacity-90">Our Vision</h4>
-                                <p class="text-white opacity-70 mt-2">To be at the forefront of digital innovation, creating solutions that drive progress.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="md:w-1/2">
-                        <h3 class="text-2xl font-semibold mb-4">Innovation, Create & Grow</h3>
-                        <p id="about-p1" class="text-gray-300 mb-4">The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age.</p>
-                        <p class="text-gray-300">Our mission is to transform your ideas into powerful digital realities, ensuring growth and success through technology and creativity.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-20 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Our Services</h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
-                        <div class="text-blue-500 mb-4"><i class="fas fa-laptop-code text-4xl"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Web Development</h3>
-                        <p class="text-gray-400">Crafting beautiful, responsive, and high-performing websites tailored to your business needs.</p>
-                    </div>
-                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
-                        <div class="text-blue-500 mb-4"><i class="fas fa-cogs text-4xl"></i></div>
-                        <h3 class="text-xl font-bold mb-2">Software Development</h3>
-                        <p class="text-gray-400">Building custom software solutions to streamline your operations and drive efficiency.</p>
-                    </div>
-                    <div class="service-card bg-gray-800 p-8 rounded-lg shadow-lg text-center">
-                        <div class="text-blue-500 mb-4"><i class="fas fa-shield-alt text-4xl"></i></div>
-                        <h3 class="text-xl font-bold mb-2">IT Services</h3>
-                        <p class="text-gray-400">Providing reliable IT support and services to keep your business running smoothly.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        /*
-        <section id="team" class="py-20 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Meet the Founders</h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                <div class="flex flex-wrap gap-8 justify-center">
-                    <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Founder" alt="Photo of the Founder">
-                        <h3 class="text-xl font-bold mb-1">Founder</h3>
-                        <p class="text-gray-400 mb-3">Founder</p>
-                        <div class="flex justify-center space-x-4">
-                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="team-card bg-gray-800 p-6 rounded-lg shadow-lg text-center w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                        <img class="w-32 h-32 rounded-full mx-auto mb-4" src="https://placehold.co/200x200/4a5568/ffffff?text=Co-Founder" alt="Photo of the Co-Founder">
-                        <h3 class="text-xl font-bold mb-1">Co-Founder</h3>
-                        <p class="text-gray-400 mb-3">Co-Founder</p>
-                         <div class="flex justify-center space-x-4">
-                            <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="stats" class="py-20 bg-gray-800/50 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div>
-                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="50">0</span>+</h3>
-                        <p class="text-gray-400 mt-2">Projects Completed</p>
-                    </div>
-                    <div>
-                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="100">0</span>%</h3>
-                        <p class="text-gray-400 mt-2">Client Satisfaction</p>
-                    </div>
-                    <div>
-                        <h3 class="text-4xl font-bold text-blue-500"><span class="counter" data-target="30">0</span>+</h3>
-                        <p class="text-gray-400 mt-2">Happy Clients</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="py-20 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">What Our Clients Say</h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                <div class="relative w-full bg-gray-900 bg-opacity-75 p-8 rounded-lg testimonial-carousel-container">
-                    <div class="testimonial-carousel">
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client A</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client B</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client C</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"They transformed our vision into a reality. Exceptional work!" - Client D</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"The Intelliverse delivered an outstanding product on time and on budget. Highly recommended!" - Client E</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"A fantastic team to work with. Professional, creative, and highly skilled." - Client F</div>
-                        <div class="testimonial-card bg-gray-800 p-6 rounded-lg shadow-lg mx-4">"Our new website has seen a significant increase in traffic thanks to their expertise." - Client G</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-*/
-        <section id="contact" class="py-20 reveal-on-scroll">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-2">Contact Us</h2>
-                    <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
-                </div>
-                <div class="flex flex-col md:flex-row gap-12">
-                    <div class="md:w-1/2">
-                        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-                            <input type="hidden" name="access_key" value="2128b8f3-02b4-48ab-8632-a74674f99b6d">
-                            <div class="space-y-6">
-                                <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                <input type="email" name="email" placeholder="Your Email" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 bg-gray-800 text-white rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                                <button type="submit" class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Send Message</button>
-                            </div>
-                        </form>
-                        <div id="form-message" class="mt-4 text-center"></div>
-                    </div>
-                    <div class="md:w-1/2">
-                        <div class="space-y-6">
-                            <div class="flex items-start space-x-4">
-                                <i class="fas fa-map-marker-alt text-2xl text-blue-500 mt-1"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold">Our Address</h3>
-                                    <p class="text-gray-400">Remote</p>
-                                </div>
-                            </div>
-                             <div class="flex items-start space-x-4">
-                                <i class="fas fa-envelope text-2xl text-blue-500 mt-1"></i>
-                                <div>
-                                    <h3 class="text-lg font-semibold">Email Us</h3>
-                                    <a href="mailto:theintelliverse@gmail.com" class="text-gray-400 hover:underline">theintelliverse@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="flex items-center space-x-4">
-                                <h3 class="text-lg font-semibold">Follow Us:</h3>
-                                <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="admin-panel" class="py-20 bg-gray-900 hidden">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-8">Admin Content Manager</h2>
-                <div class="max-w-4xl mx-auto bg-gray-800 p-8 rounded-lg space-y-6">
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">Hero Section</h3>
-                        <textarea id="admin-hero-subtitle" class="w-full p-2 bg-gray-900 text-white rounded mt-2" rows="2"></textarea>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-semibold mb-2">About Section</h3>
-                        <textarea id="admin-about-p1" class="w-full p-2 bg-gray-900 text-white rounded mt-2" rows="3"></textarea>
-                    </div>
-                    <button id="save-content-btn" class="w-full themed-accent themed-accent-hover text-white font-bold py-3 px-6 rounded-lg transition animated-button">Save Changes</button>
-                    <p class="text-sm text-gray-400 text-center mt-4">Note: Changes are for demonstration and will reset on page reload.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="bg-gray-900 py-8">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-            <div class="flex justify-center space-x-6 mb-4">
-                 <a href="https://www.linkedin.com/company/the-intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-linkedin"></i></a>
-                 <a href="https://www.instagram.com/the_intelliverse/" target="_blank" class="text-gray-400 hover:text-blue-500 text-2xl footer-icon"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2024 The Intelliverse. All Rights Reserved.</p>
-            <a href="#" id="admin-link" class="text-sm hover:underline hidden">Admin Access</a>
-        </div>
-    </footer>
-
-    <div id="chatbot-container">
-        <div id="chatbot-window">
-            <div id="chat-header" class="flex justify-between items-center">
-                <span>Intelliverse Assistant</span>
-                <button id="clear-chat-btn" class="text-xs text-gray-400 hover:text-white">Clear</button>
-            </div>
-            <div id="chat-messages"></div>
-            <div id="quick-replies-container"></div>
-            <div id="chat-input-container">
-                <input type="text" id="chat-input" placeholder="Ask a question...">
-                <button id="chat-send"><i class="fas fa-paper-plane"></i></button>
-            </div>
-        </div>
-        <div id="chatbot-bubble">
-            <i class="fas fa-comment-dots text-2xl"></i>
-        </div>
+    <div id="chatbot-bubble">
+      <i class="fas fa-comment-dots text-2xl"></i>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const contentData = {
-                hero: {
-                    subtitle: "Your one-stop solution for software development, web development, and IT services."
-                },
-                about: {
-                    p1: "The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age."
-                },
-            };
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const contentData = {
+        hero: {
+          subtitle: "Your one-stop solution for software development, web development, and IT services."
+        },
+        about: {
+          p1: "The Intelliverse is a dynamic software development company dedicated to providing innovative solutions. We specialize in web development, mobile applications, and comprehensive IT services that empower businesses to thrive in the digital age."
+        },
+      };
 
-            function renderContent() {
-                document.getElementById('hero-subtitle').innerText = contentData.hero.subtitle;
-                document.getElementById('about-p1').innerText = contentData.about.p1;
-            }
+      function renderContent() {
+        document.getElementById('hero-subtitle').innerText = contentData.hero.subtitle;
+        document.getElementById('about-p1').innerText = contentData.about.p1;
+      }
 
-            renderContent();
-            
-            window.addEventListener('load', () => {
-                document.getElementById('preloader').style.display = 'none';
-            });
-            
-            new Typed('#typed-hero', {
-                strings: ['Welcome to The Intelliverse', 'Innovation, Create & Grow', 'Your Digital Partner'],
-                typeSpeed: 50,
-                backSpeed: 25,
-                loop: true
-            });
+      renderContent();
 
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const openIcon = document.getElementById('menu-open-icon');
-            const closeIcon = document.getElementById('menu-close-icon');
-
-            mobileMenuButton.addEventListener('click', () => {
-                const isOpened = mobileMenu.classList.toggle('open');
-                mobileMenuButton.setAttribute('aria-expanded', isOpened);
-                
-                if (isOpened) {
-                    mobileMenu.classList.remove('opacity-0', '-translate-y-4', 'pointer-events-none');
-                    openIcon.classList.add('opacity-0', '-rotate-90');
-                    closeIcon.classList.remove('opacity-0', 'rotate-90');
-                } else {
-                    mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
-                    openIcon.classList.remove('opacity-0', '-rotate-90');
-                    closeIcon.classList.add('opacity-0', 'rotate-90');
-                }
-            });
-
-            const header = document.getElementById('header');
-            let lastScrollTop = 0;
-            window.addEventListener("scroll", function() {
-                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                if (scrollTop > 50) {
-                    header.classList.add('scrolled');
-                } else {
-                    header.classList.remove('scrolled');
-                }
-                if (scrollTop > lastScrollTop && scrollTop > 100) { // On scroll down
-                    header.style.top = "-100px";
-                } else { // On scroll up
-                    header.style.top = "0";
-                }
-                lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-            }, false);
-
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    if (mobileMenu.classList.contains('open')) {
-                        mobileMenu.classList.remove('open');
-                        mobileMenu.classList.add('opacity-0', '-translate-y-4', 'pointer-events-none');
-                        mobileMenuButton.setAttribute('aria-expanded', 'false');
-                        openIcon.classList.remove('opacity-0', '-rotate-90');
-                        closeIcon.classList.add('opacity-0', 'rotate-90');
-                    }
-                });
-            });
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal-on-scroll').forEach(el => {
-                observer.observe(el);
-            });
-
-            const contactForm = document.getElementById('contact-form');
-            const formMessage = document.getElementById('form-message');
-            contactForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const formData = new FormData(this);
-                const object = {};
-                formData.forEach((value, key) => { object[key] = value; });
-                const json = JSON.stringify(object);
-                formMessage.innerHTML = "Sending...";
-                formMessage.className = 'mt-4 text-center text-gray-400';
-
-                fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: json
-                })
-                .then(async (response) => {
-                    let json = await response.json();
-                    if (response.status == 200) {
-                        formMessage.innerHTML = "Message sent successfully!";
-                        formMessage.classList.add('text-green-500');
-                    } else {
-                        formMessage.innerHTML = json.message || "Something went wrong!";
-                        formMessage.classList.add('text-red-500');
-                    }
-                })
-                .catch(error => {
-                    formMessage.innerHTML = "Something went wrong!";
-                    formMessage.classList.add('text-red-500');
-                })
-                .finally(() => {
-                    contactForm.reset();
-                    setTimeout(() => {
-                        formMessage.innerHTML = '';
-                    }, 5000);
-                });
-            });
-
-            // --- Counter Animation for Stats Section ---
-            const counters = document.querySelectorAll('.counter');
-            const speed = 200; // The lower the #, the faster the count
-
-            const animateCounters = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const counter = entry.target;
-                        const updateCount = () => {
-                            const target = +counter.getAttribute('data-target');
-                            const count = +counter.innerText;
-                            const inc = target / speed;
-
-                            if (count < target) {
-                                counter.innerText = Math.ceil(count + inc);
-                                setTimeout(updateCount, 10);
-                            } else {
-                                counter.innerText = target;
-                            }
-                        };
-                        updateCount();
-                        observer.unobserve(counter); // Stop observing once animated
-                    }
-                });
-            };
-
-            const counterObserver = new IntersectionObserver(animateCounters, {
-                root: null,
-                threshold: 0.5
-            });
-
-            counters.forEach(counter => {
-                counterObserver.observe(counter);
-            });
-
-            // Chatbot Logic
-            const chatbotBubble = document.getElementById('chatbot-bubble');
-            const chatbotWindow = document.getElementById('chatbot-window');
-            const chatHeader = document.getElementById('chat-header');
-            const chatMessages = document.getElementById('chat-messages');
-            const chatInput = document.getElementById('chat-input');
-            const chatSend = document.getElementById('chat-send');
-            const clearChatBtn = document.getElementById('clear-chat-btn');
-            const quickRepliesContainer = document.getElementById('quick-replies-container');
-
-            const botKnowledge = [
-                { keywords: ['service', 'what do you do', 'offer'], response: "We offer Web Development, Software Development, and IT Services." },
-                { keywords: ['founder', 'team', 'who are you', 'about'], response: "The Intelliverse is a dynamic software development company led by our expert founders." },
-                { keywords: ['contact', 'email', 'phone'], response: "You can email us at theintelliverse@gmail.com. All details are on the contact section." },
-                { keywords: ['price', 'quote', 'cost'], response: "Pricing varies by project. Please use the contact form for a detailed quote." },
-                { keywords: ['hello', 'hi', 'hey'], response: "Hello! How can I help you today?" }
-            ];
-            const quickReplies = ["What services do you offer?", "Who are the founders?", "How can I get a quote?"];
-
-            const getBotResponse = (userInput) => {
-                const lowerInput = userInput.toLowerCase();
-                for (const item of botKnowledge) {
-                    if (item.keywords.some(keyword => lowerInput.includes(keyword))) {
-                        return item.response;
-                    }
-                }
-                return "I can answer questions about our services and founders. For more, please use the contact form.";
-            };
-
-            const addMessage = (message, sender) => {
-                const messageElement = document.createElement('div');
-                messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
-                messageElement.textContent = message;
-                chatMessages.appendChild(messageElement);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            };
-            
-            const handleChat = () => {
-                const userInput = chatInput.value.trim();
-                if (!userInput) return;
-                addMessage(userInput, 'user');
-                chatInput.value = '';
-                quickRepliesContainer.innerHTML = '';
-                
-                setTimeout(() => {
-                    const botResponse = getBotResponse(userInput);
-                    addMessage(botResponse, 'bot');
-                    showQuickReplies();
-                }, 1000);
-            };
-            
-            const showQuickReplies = () => {
-                quickRepliesContainer.innerHTML = '';
-                const container = document.createElement('div');
-                container.className = 'quick-replies';
-                quickReplies.forEach(replyText => {
-                    const button = document.createElement('button');
-                    button.textContent = replyText;
-                    button.className = 'quick-reply';
-                    button.onclick = () => {
-                        chatInput.value = replyText;
-                        handleChat();
-                    };
-                    container.appendChild(button);
-                });
-                quickRepliesContainer.appendChild(container);
-            };
-
-            const initializeChat = () => {
-                chatMessages.innerHTML = '';
-                addMessage("Hello! How can I help you today?", 'bot');
-                showQuickReplies();
-            };
-
-            chatbotBubble.addEventListener('click', () => chatbotWindow.classList.toggle('open'));
-            chatSend.addEventListener('click', handleChat);
-            chatInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleChat());
-            clearChatBtn.addEventListener('click', initializeChat);
-            
-            initializeChat();
+      window.addEventListener('load', () => {
+        const preloader = document.getElementById('preloader');
+        preloader.classList.add('hidden');
+        preloader.addEventListener('transitionend', () => {
+          preloader.style.display = 'none';
         });
+      });
 
-        particlesJS('particles-js', {
-          "particles": {
-            "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#ffffff" },
-            "shape": { "type": "circle" },
-            "opacity": { "value": 0.5, "random": false },
-            "size": { "value": 3, "random": true },
-            "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-            "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-            "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
-          },
-          "retina_detect": true
+      new Typed('#typed-hero', {
+        strings: ['Welcome to The Intelliverse', 'Innovation, Create & Grow', 'Your Digital Partner'],
+        typeSpeed: 50,
+        backSpeed: 25,
+        loop: true
+      });
+
+      // --- New Sidebar Navigation ---
+      const menuToggleButton = document.getElementById('menu-toggle-btn');
+      const sidebarCloseButton = document.getElementById('sidebar-close-btn');
+      const sidebarMenu = document.getElementById('sidebar-menu');
+      const sidebarOverlay = document.getElementById('sidebar-overlay');
+      const sidebarLinks = document.querySelectorAll('.sidebar-link');
+
+      const openSidebar = () => {
+        sidebarMenu.classList.add('open');
+        sidebarOverlay.classList.remove('hidden');
+        menuToggleButton.setAttribute('aria-expanded', 'true');
+      };
+
+      const closeSidebar = () => {
+        sidebarMenu.classList.remove('open');
+        sidebarOverlay.classList.add('hidden');
+        menuToggleButton.setAttribute('aria-expanded', 'false');
+      };
+
+      menuToggleButton.addEventListener('click', openSidebar);
+      sidebarCloseButton.addEventListener('click', closeSidebar);
+      sidebarOverlay.addEventListener('click', closeSidebar);
+      sidebarLinks.forEach(link => {
+        link.addEventListener('click', closeSidebar);
+      });
+
+
+      const header = document.getElementById('header');
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > 100) { // On scroll down
+          header.style.top = "-100px";
+        } else { // On scroll up
+          header.style.top = "0";
+        }
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+      }, false);
+
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
         });
-    </script>
+      });
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+
+      const contactForm = document.getElementById('contact-form');
+      const formMessage = document.getElementById('form-message');
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const object = {};
+        formData.forEach((value, key) => { object[key] = value; });
+        const json = JSON.stringify(object);
+        formMessage.innerHTML = "Sending...";
+        formMessage.className = 'mt-4 text-center text-gray-400';
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: json
+        })
+          .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+              formMessage.innerHTML = "Message sent successfully!";
+              formMessage.classList.add('text-green-500');
+            } else {
+              formMessage.innerHTML = json.message || "Something went wrong!";
+              formMessage.classList.add('text-red-500');
+            }
+          })
+          .catch(error => {
+            formMessage.innerHTML = "Something went wrong!";
+            formMessage.classList.add('text-red-500');
+          })
+          .finally(() => {
+            contactForm.reset();
+            setTimeout(() => {
+              formMessage.innerHTML = '';
+            }, 5000);
+          });
+      });
+
+      // --- Counter Animation for Stats Section ---
+      const counters = document.querySelectorAll('.counter');
+      const speed = 200; // The lower the #, the faster the count
+
+      const animateCounters = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const counter = entry.target;
+            const updateCount = () => {
+              const target = +counter.getAttribute('data-target');
+              const count = +counter.innerText;
+              const inc = target / speed;
+
+              if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 10);
+              } else {
+                counter.innerText = target;
+              }
+            };
+            updateCount();
+            observer.unobserve(counter); // Stop observing once animated
+          }
+        });
+      };
+
+      const counterObserver = new IntersectionObserver(animateCounters, {
+        root: null,
+        threshold: 0.5
+      });
+
+      counters.forEach(counter => {
+        counterObserver.observe(counter);
+      });
+
+      // Chatbot Logic
+      const chatbotBubble = document.getElementById('chatbot-bubble');
+      const chatbotWindow = document.getElementById('chatbot-window');
+      const chatHeader = document.getElementById('chat-header');
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input');
+      const chatSend = document.getElementById('chat-send');
+      const clearChatBtn = document.getElementById('clear-chat-btn');
+      const quickRepliesContainer = document.getElementById('quick-replies-container');
+
+      const botKnowledge = [
+        { keywords: ['service', 'what do you do', 'offer'], response: "We offer Web Development, Software Development, and IT Services." },
+        { keywords: ['founder', 'team', 'who are you', 'about'], response: "The Intelliverse is a dynamic software development company led by our expert founders." },
+        { keywords: ['contact', 'email', 'phone'], response: "You can email us at theintelliverse@gmail.com. All details are on the contact section." },
+        { keywords: ['price', 'quote', 'cost'], response: "Pricing varies by project. Please use the contact form for a detailed quote." },
+        { keywords: ['hello', 'hi', 'hey'], response: "Hello! How can I help you today?" }
+      ];
+      const quickReplies = ["What services do you offer?", "Who are the founders?", "How can I get a quote?"];
+
+      const getBotResponse = (userInput) => {
+        const lowerInput = userInput.toLowerCase();
+        for (const item of botKnowledge) {
+          if (item.keywords.some(keyword => lowerInput.includes(keyword))) {
+            return item.response;
+          }
+        }
+        return "I can answer questions about our services and founders. For more, please use the contact form.";
+      };
+
+      const addMessage = (message, sender) => {
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', sender === 'user' ? 'user-message' : 'bot-message');
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      };
+
+      const handleChat = () => {
+        const userInput = chatInput.value.trim();
+        if (!userInput) return;
+        addMessage(userInput, 'user');
+        chatInput.value = '';
+        quickRepliesContainer.innerHTML = '';
+
+        setTimeout(() => {
+          const botResponse = getBotResponse(userInput);
+          addMessage(botResponse, 'bot');
+          showQuickReplies();
+        }, 1000);
+      };
+
+      const showQuickReplies = () => {
+        quickRepliesContainer.innerHTML = '';
+        const container = document.createElement('div');
+        container.className = 'quick-replies';
+        quickReplies.forEach(replyText => {
+          const button = document.createElement('button');
+          button.textContent = replyText;
+          button.className = 'quick-reply';
+          button.onclick = () => {
+            chatInput.value = replyText;
+            handleChat();
+          };
+          container.appendChild(button);
+        });
+        quickRepliesContainer.appendChild(container);
+      };
+
+      const initializeChat = () => {
+        chatMessages.innerHTML = '';
+        addMessage("Hello! How can I help you today?", 'bot');
+        showQuickReplies();
+      };
+
+      chatbotBubble.addEventListener('click', () => chatbotWindow.classList.toggle('open'));
+      chatSend.addEventListener('click', handleChat);
+      chatInput.addEventListener('keypress', (e) => e.key === 'Enter' && handleChat());
+      clearChatBtn.addEventListener('click', initializeChat);
+
+      initializeChat();
+    });
+
+    particlesJS('particles-js', {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": false },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
+        "modes": { "repulse": { "distance": 100, "duration": 0.4 }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
+
 </html>
-
-
